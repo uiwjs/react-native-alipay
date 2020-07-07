@@ -22,6 +22,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
+  s.dependency "AlipaySDK-iOS"
+  s.library = "c++", "z"
   # ...
   # s.dependency "..."
 end

@@ -6,6 +6,10 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B954DB6F24B48377005C7268 /* AlipaySDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B954DB6E24B48377005C7268 /* AlipaySDK */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libAlipay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAlipay.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B954DB6C24B48352005C7268 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		B954DB6E24B48377005C7268 /* AlipaySDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AlipaySDK; path = AlipaySDK.framework/AlipaySDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B954DB6F24B48377005C7268 /* AlipaySDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +52,17 @@
 			isa = PBXGroup;
 			children = (
 				134814211AA4EA7D00B7C361 /* Products */,
+				B954DB6B24B48352005C7268 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		B954DB6B24B48352005C7268 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B954DB6E24B48377005C7268 /* AlipaySDK */,
+				B954DB6C24B48352005C7268 /* AlipaySDK.bundle */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,6 +10,7 @@ react-native-uiwjs-alipay
 ## Getting started
 
 ```bash
+yarn install react-native-uiwjs-alipay --save
 # react-native version >= 0.60+
 $ cd ios && pod install
 # or
@@ -21,13 +22,26 @@ $ react-native link react-native-uiwjs-alipay
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
 
-// 设置 支付宝URL Schemes
+// 设置 支付宝 URL Schemes
+// scheme = `ap` + `APPID`
 Alipay.setAlipayScheme(scheme);
-// 支付宝 Android 支付
-// orderInfo 是后台拼接好的支付参数
-Alipay.alipayAndroid(orderInfo,(res)=>console.log(res))
 // 支付宝 iOS 端的支付
-Alipay.alipay(orderInfo, (res)=>console.log(res))
+// payInfo 是后台拼接好的支付参数
+Alipay.alipay(payInfo, (res)=>console.log(res))
+```
+
+订单详情 [`payInfo`](https://opendocs.alipay.com/open/204/105295#%E5%BF%AB%E6%8D%B7%E8%AE%A2%E5%8D%95%E6%94%AF%E4%BB%98%20iOS) 编码前的数据
+
+```bash
+app_id=xxxxxxxxx&biz_content={"timeout_express":"30m","product_code":"QUICK_MSECURITY_PAY","total_amount":"0.01","subject":"1","body":"我是测试数据","out_trade_no":"IQJZSRC1YMQB5HU"}&charset=utf-8&format=json&method=alipay.trade.app.pay&notify_url=http://domain.merchant.com/payment_notify&sign_type=RSA2&timestamp=2016-08-25 20:26:31&version=1.0&sign=cYmuUnKi5QdBsoZEAbMXVMmRWjsuUj+y48A2DvWAVVBuYkiBj13CFDHu2vZQvmOfkjE0YqCUQE04kqm9Xg3tIX8tPeIGIFtsIyp/M45w1ZsDOiduBbduGfRo1XRsvAyVAv2hCrBLLrDI5Vi7uZZ77Lo5J0PpUUWwyQGt0M4cj8g=
+```
+
+订单详情 `payInfo` 编码的数据
+
+> 订单参数通过 `encodeURIComponent` 编码 和 `decodeURIComponent` 解码。
+
+```bash
+app_id=xxxxxxxxx&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22total_amount%22%3A%220.01%22%2C%22subject%22%3A%221%22%2C%22body%22%3A%22%E6%88%91%E6%98%AF%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%22%2C%22out_trade_no%22%3A%22IQJZSRC1YMQB5HU%22%7D&charset=utf-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fdomain.merchant.com%2Fpayment_notify&sign_type=RSA2&timestamp=2016-08-25%2020%3A26%3A31&version=1.0&sign=cYmuUnKi5QdBsoZEAbMXVMmRWjsuUj%2By48A2DvWAVVBuYkiBj13CFDHu2vZQvmOfkjE0YqCUQE04kqm9Xg3tIX8tPeIGIFtsIyp%2FM45w1ZsDOiduBbduGfRo1XRsvAyVAv2hCrBLLrDI5Vi7uZZ77Lo5J0PpUUWwyQGt0M4cj8g%3D
 ```
 
 ### 其它
