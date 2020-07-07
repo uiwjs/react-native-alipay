@@ -1,6 +1,6 @@
 {
   "name": "react-native-uiwjs-alipay",
-  "title": "React Native Uiwjs Alipay",
+  "title": "基于 React Native 的宝支付插件",
   "version": "1.0.0",
   "description": "TODO",
   "main": "index.js",
