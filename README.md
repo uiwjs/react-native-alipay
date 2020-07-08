@@ -20,7 +20,7 @@ $ react-native link react-native-uiwjs-alipay
 
 ## Usage
 
-> ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)
+> ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)  
 > 支付宝需要设置 `Scheme`
 
 ```javascript
@@ -51,7 +51,7 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=
 alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=%7B+%22out_trade_no%22%3A%221111144444%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%2212321313655555555%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&return_url=http%3A%2F%2Fdomain.com%2FCallBack%2Freturn_url.jsp&sign=FP5fLb%2Fl2LoijO7k0BrmEvWKfuG7oIbYA%2F4VVL9mI0%2FSWAEzt27Zp09LK2xsDKaW0oGJ38aGhtDxGIHqZDMvbhTooB6jeRH%2B2m1wM5hyDq1vbc8CzfL%2BOSfRoQ3RQ4j50gbO0oABOUvaSb%2FxK8Tzix7HfDpMfjtqhN%2B81fiET2Q19dxcOmu22GAWE4%2FZPrbASsVfi1r%2FOXLdeDjkqdUTy9lOGJqg2bgTKy6BaYcelc%2FnEpuaF0mDXbHJX1vmra7vd8rhczy11rEVaHofMnPVZr3hucMuBH%2FfxOXQZuZcAmyaWr%2BNT8hVetxZaTgyhK9fqxjGcxPijc%2BpWWTwMxt4YA%3D%3D&sign_type=RSA2&timestamp=2020-07-08+17%3A07%3A36&version=1.0
 ```
 
-### 支付宝返回应用
+### 支付宝返回应用 iOS 设置
 
 1. 在代码中设置支付宝 `URL Schemes`，下面实例为 `ap2021001172656340` 为定义的 `scheme`
 
