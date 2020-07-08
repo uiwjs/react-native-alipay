@@ -10,7 +10,7 @@ react-native-uiwjs-alipay
 ## Getting started
 
 ```bash
-yarn install react-native-uiwjs-alipay --save
+yarn add react-native-uiwjs-alipay
 # react-native version >= 0.60+
 $ cd ios && pod install
 # or
