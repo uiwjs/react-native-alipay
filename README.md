@@ -51,7 +51,7 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=
 alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=%7B+%22out_trade_no%22%3A%221111144444%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%2212321313655555555%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&return_url=http%3A%2F%2Fdomain.com%2FCallBack%2Freturn_url.jsp&sign=FP5fLb%2Fl2LoijO7k0BrmEvWKfuG7oIbYA%2F4VVL9mI0%2FSWAEzt27Zp09LK2xsDKaW0oGJ38aGhtDxGIHqZDMvbhTooB6jeRH%2B2m1wM5hyDq1vbc8CzfL%2BOSfRoQ3RQ4j50gbO0oABOUvaSb%2FxK8Tzix7HfDpMfjtqhN%2B81fiET2Q19dxcOmu22GAWE4%2FZPrbASsVfi1r%2FOXLdeDjkqdUTy9lOGJqg2bgTKy6BaYcelc%2FnEpuaF0mDXbHJX1vmra7vd8rhczy11rEVaHofMnPVZr3hucMuBH%2FfxOXQZuZcAmyaWr%2BNT8hVetxZaTgyhK9fqxjGcxPijc%2BpWWTwMxt4YA%3D%3D&sign_type=RSA2&timestamp=2020-07-08+17%3A07%3A36&version=1.0
 ```
 
-### 支付宝返回应用 iOS 设置
+## 支付宝返回应用 iOS 设置
 
 > ⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/b8b5b3e6e53bb23d1503cd9c565ad8f2132e2404/example/App.js#L6-L24) 监听事件来请求后台 API，来优化这一用户体验。
 
@@ -105,7 +105,7 @@ Alipay.setAlipayScheme('ap2021001172656340');
 
 命令测试 `xcrun simctl openurl booted ap2021001172656340://`
 
-### 错误处理
+## 错误处理
 
 ```bash
 [NetworkInfo] Signal strength query returned error: Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied", descriptor: <CTServiceDescriptor 0x283317100, domain=1, instance=1>
@@ -113,7 +113,7 @@ Alipay.setAlipayScheme('ap2021001172656340');
 
 在 `Product` -> `Scheme` -> `Edit Scheme` -> `Run` -> `Environment Variables` 添加 `OS_ACTIVITY_MODE` `disable`
 
-### 其它
+## 其它
 
 当前工程基于 [@brodybits/create-react-native-module](https://github.com/brodybits/create-react-native-module) 初始化。
 
@@ -121,7 +121,7 @@ Alipay.setAlipayScheme('ap2021001172656340');
 npx create-react-native-module --package-identifier com.uiwjs --generate-example Alipay --example-react-native-version 0.62.2 --module-name react-native-uiwjs-alipay --github-account uiwjs --author-name "Kenny Wong" --author-email "wowohoo@qq.com"
 ```
 
-### 相关连接 
+## 相关连接 
 
 - [支付宝生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
 - [支付宝 SDK 下载地址](https://opendocs.alipay.com/open/54/104509)
