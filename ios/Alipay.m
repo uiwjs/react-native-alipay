@@ -34,12 +34,12 @@ RCT_EXPORT_MODULE()
                 self->alipayCallBack([[NSArray alloc] initWithObjects:resultDic, nil]);
                 self->alipayCallBack = nil;
             }
-            NSLog(@"result = %@",resultDic);
+            NSLog(@"result-->1 = %@",resultDic);
         }];
 
         // 授权跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processAuth_V2Result:aURL standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
+            NSLog(@"result-->2 = %@", resultDic);
             // 解析 auth code
             NSString *result = resultDic[@"result"];
             NSString *authCode = nil;
