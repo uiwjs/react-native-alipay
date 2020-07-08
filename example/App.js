@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, Linking, AppState } from 'react-native';
 import Alipay from 'react-native-uiwjs-alipay';
 
 export default class App extends Component {
   componentDidMount() {
     Alipay.setAlipayScheme('ap2021001172656340');
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+  componentWillUnmount(){
+    AppState.removeEventListener('change', this._handleAppStateChange)
+  }
+  // 2020-07-08 20:56:14.081 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'inactive'
+  // 2020-07-08 20:56:14.947 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'background'
+  // 2020-07-08 20:56:42.580 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'active'
+  // 2020-07-08 20:56:42.633 [info][tid:com.facebook.react.JavaScript] 'nextAppState:res:', null
+  _handleAppStateChange = (nextAppState) => {
+    console.log('nextAppState:', nextAppState)
+    if(nextAppState==='active'){
+      Linking.getInitialURL().then(res => {
+        console.log('nextAppState:res:', res)
+      })
+    }
   }
   aliPay = () => {
-    const payInfo = 'app_id=2021001172656340&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22total_amount%22%3A%220.01%22%2C%22subject%22%3A%221%22%2C%22body%22%3A%22%E6%88%91%E6%98%AF%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%22%2C%22out_trade_no%22%3A%22IQJZSRC1YMQB5HU%22%7D&charset=utf-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fdomain.merchant.com%2Fpayment_notify&sign_type=RSA2&timestamp=2016-08-25%2020%3A26%3A31&version=1.0&sign=cYmuUnKi5QdBsoZEAbMXVMmRWjsuUj%2By48A2DvWAVVBuYkiBj13CFDHu2vZQvmOfkjE0YqCUQE04kqm9Xg3tIX8tPeIGIFtsIyp%2FM45w1ZsDOiduBbduGfRo1XRsvAyVAv2hCrBLLrDI5Vi7uZZ77Lo5J0PpUUWwyQGt0M4cj8g%3D';
+    // return_url=
+    const payInfo = `alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=2021001172656340&biz_content=%7B+%22out_trade_no%22%3A%22123123213123217%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%221234%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&return_url=ap2021001172656340%3A%2F%2F&sign=NVSGkwXj%2BA2FATt%2BHXrzt%2B6WdalIt8JhBpTIXQRRvtkdzP0ZC85si2jK27rM5DWzrWfF9KOuA1Mk0%2BkT3P6NRKEYL4%2FDS5VlZf6BSta8CTcZIgGAnQr8H8dKCWxkzQtvUbLBCimQpJyesidmxh3tXNZNHZHcjonJeqmu%2FdSv%2BubruAfo3etNUwGJQscPGbLtCy%2BU%2BEihSmNPVTIjh56MJunF%2Fu1I%2Fbte85XCzfJVrgGnWtvpT%2BRcbdDrDkRDc3JuRHbNsRgY%2FY413ovI5xSnGZ1oWLAd%2ByXuqoT0zDL8O%2FDu38nSJU%2Bkm1SF0u6Gpkvajef4%2F6WglfCMrqZCet%2B7GA%3D%3D&sign_type=RSA2&timestamp=2020-07-08+21%3A45%3A27&version=1.0`;
     Alipay.alipay(payInfo, (resule) => {
-      console.log(resule)
+      console.log('resule-->>>', resule)
     });
   }
   render() {
