@@ -65,7 +65,7 @@ Alipay.setAlipayScheme('ap2021001172656340');
 2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=ap2021001172656340`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30)，`return_url` 的值为定义的 `scheme` => `ap2021001172656340://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
 
 ```js
-// payInfo 是后台拼接好的支付参数
+// payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=ap2021001172656340://`
 Alipay.alipay(payInfo, (res)=>console.log(res))
 ```
 
