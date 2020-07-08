@@ -86,7 +86,7 @@ Alipay.setAlipayScheme('ap2021001172656340');
 </array>
 ```
 
-4. 修改 `ios/<应用名称>/AppDelegate.m` 添加下列代码：
+4. 修改 [`ios/<应用名称>/AppDelegate.m`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4329bd62443bf377221860cd1acfaa710bbe562d/example/ios/example/AppDelegate.m#L60-L70) 添加下列代码：
 
 ```objective-c
 #import <React/RCTLinkingManager.h>
