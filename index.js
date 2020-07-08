@@ -20,4 +20,14 @@ export default class Alipay {
       NativeModules.Alipay.setAlipayScheme(scheme);
     }
   }
+
+  /**
+   * 设置支付宝沙箱环境，仅 Android
+   * @param isSandBox
+   */
+  static setAlipaySandbox(isSandbox) {
+    if (Platform.OS === 'android') {
+      NativeModules.Alipay.setAlipaySandbox(isSandBox);
+    }
+  }
 }

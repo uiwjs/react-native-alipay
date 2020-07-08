@@ -54,6 +54,11 @@ export const Alipay: {
    * @param scheme scheme = `ap` + `APPID`
    */
   setAlipayScheme: (scheme: string) => void;
+  /**
+   * 设置支付宝沙箱环境，仅 Android
+   * @param isSandBox
+   */
+  setAlipaySandbox: (isSandbox: boolean) => void;
 };
 
 export default Alipay;

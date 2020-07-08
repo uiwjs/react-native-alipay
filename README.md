@@ -25,6 +25,8 @@ import Alipay from 'react-native-uiwjs-alipay';
 // 设置 支付宝 URL Schemes
 // scheme = `ap` + `APPID`
 Alipay.setAlipayScheme(scheme);
+// 设置支付宝沙箱环境
+Alipay.setAlipaySandbox(isSandbox);
 // 支付宝 iOS 端的支付
 // payInfo 是后台拼接好的支付参数
 Alipay.alipay(payInfo, (res)=>console.log(res))
