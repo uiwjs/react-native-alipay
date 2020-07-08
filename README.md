@@ -55,14 +55,14 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=
 
 ⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/b8b5b3e6e53bb23d1503cd9c565ad8f2132e2404/example/App.js#L6-L24) 监听事件请求后台 API，来优化这一用户体验。
 
-1. 在代码中设置支付宝 `URL Schemes`，下面实例为 `ap2021001172656340` 为定义的 `scheme`
+1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例为 `ap2021001172656340` 为定义的 `scheme`
 
 ```js
 // scheme = `ap` + `APPID`
 Alipay.setAlipayScheme('ap2021001172656340');
 ```
 
-2. 在请求支付的 `payInfo` 中必须包含 `return_url=ap2021001172656340`，`return_url` 的值为定义的 `scheme`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
+2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=ap2021001172656340`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30)，`return_url` 的值为定义的 `scheme` => `ap2021001172656340://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
 
 ```js
 // payInfo 是后台拼接好的支付参数
