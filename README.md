@@ -26,7 +26,7 @@ $ react-native link react-native-uiwjs-alipay
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
 
-// 设置 支付宝 URL Schemes
+// 设置 支付宝 URL Schemes，`APPID` 为支付宝分配给开发者的应用ID
 // scheme = `ap` + `APPID`
 Alipay.setAlipayScheme(scheme);
 // 设置支付宝沙箱环境，仅 Android 支持
@@ -55,10 +55,10 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=
 
 ⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/b8b5b3e6e53bb23d1503cd9c565ad8f2132e2404/example/App.js#L6-L24) 监听事件请求后台 API，来优化这一用户体验。
 
-1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例为 `ap2021001172656340` 为定义的 `scheme`
+1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例为 `ap2021001172656340` 为定义的 `scheme` = `ap` + `appid`，`appid` 为支付宝分配给开发者的应用ID
 
 ```js
-// scheme = `ap` + `APPID`
+// scheme = `ap` + `appid`
 Alipay.setAlipayScheme('ap2021001172656340');
 ```
 
