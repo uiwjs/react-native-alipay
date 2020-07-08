@@ -124,5 +124,5 @@ npx create-react-native-module --package-identifier com.uiwjs --generate-example
 ## 相关连接 
 
 - [支付宝生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
-- [支付宝 SDK 下载地址](https://opendocs.alipay.com/open/54/104509)
+- [支付宝 SDK 下载地址，当前使用的是 AlipaySDK	15.7.7](https://opendocs.alipay.com/open/54/104509)
 - [React-native 0.6版本集成支付宝-Alipay爬坑](https://segmentfault.com/a/1190000020758279)
