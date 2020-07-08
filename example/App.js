@@ -10,10 +10,10 @@ export default class App extends Component {
   componentWillUnmount(){
     AppState.removeEventListener('change', this._handleAppStateChange)
   }
-  // 2020-07-08 20:56:14.081 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'inactive'
-  // 2020-07-08 20:56:14.947 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'background'
-  // 2020-07-08 20:56:42.580 [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'active'
-  // 2020-07-08 20:56:42.633 [info][tid:com.facebook.react.JavaScript] 'nextAppState:res:', null
+  // [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'inactive'
+  // [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'background'
+  // [info][tid:com.facebook.react.JavaScript] 'nextAppState:', 'active'
+  // [info][tid:com.facebook.react.JavaScript] 'nextAppState:res:', null
   _handleAppStateChange = (nextAppState) => {
     console.log('nextAppState:', nextAppState)
     if(nextAppState==='active'){
