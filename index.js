@@ -8,7 +8,7 @@ export default class Alipay {
    * @param callback 支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
    */
   static alipay(orderInfo, callback) {
-      NativeModules.Alipay.alipay(orderInfo, callback)
+    NativeModules.Alipay.alipay(orderInfo, callback)
   }
 
   /**
@@ -25,7 +25,7 @@ export default class Alipay {
    * 设置支付宝沙箱环境，仅 Android
    * @param isSandBox
    */
-  static setAlipaySandbox(isSandbox) {
+  static setAlipaySandbox(isSandBox) {
     if (Platform.OS === 'android') {
       NativeModules.Alipay.setAlipaySandbox(isSandBox);
     }
