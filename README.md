@@ -26,8 +26,8 @@ $ react-native link react-native-uiwjs-alipay
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
 
-// 设置 支付宝 URL Schemes，`APPID` 为支付宝分配给开发者的应用ID
-// scheme = `ap` + `APPID`
+// 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`
+// scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID
 Alipay.setAlipayScheme(scheme);
 // 设置支付宝沙箱环境，仅 Android 支持
 Alipay.setAlipaySandbox(isSandbox);
@@ -39,13 +39,13 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 订单详情 [`payInfo`](https://opendocs.alipay.com/open/204/105295#%E5%BF%AB%E6%8D%B7%E8%AE%A2%E5%8D%95%E6%94%AF%E4%BB%98%20iOS) 编码前的数据
 
 ```bash
-alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content={ "out_trade_no":"1111144444", "total_amount":"0.01", "subject":"12321313655555555", "product_code":"QUICK_MSECURITY_PAY" }&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http://ane.boshu.ltd/owner/pay/api/ownerPay/callback&return_url=http://domain.com/CallBack/return_url.jsp&sign=FP5fLb/l2LoijO7k0BrmEvWKfuG7oIbYA/4VVL9mI0/SWAEzt27Zp09LK2xsDKaW0oGJ38aGhtDxGIHqZDMvbhTooB6jeRH+2m1wM5hyDq1vbc8CzfL+OSfRoQ3RQ4j50gbO0oABOUvaSb/xK8Tzix7HfDpMfjtqhN+81fiET2Q19dxcOmu22GAWE4/ZPrbASsVfi1r/OXLdeDjkqdUTy9lOGJqg2bgTKy6BaYcelc/nEpuaF0mDXbHJX1vmra7vd8rhczy11rEVaHofMnPVZr3hucMuBH/fxOXQZuZcAmyaWr+NT8hVetxZaTgyhK9fqxjGcxPijc+pWWTwMxt4YA==&sign_type=RSA2&timestamp=2020-07-08 17:07:36&version=1.0
+alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content={ "out_trade_no":"123123123123123", "total_amount":"0.01", "subject":"1234", "product_code":"QUICK_MSECURITY_PAY" }&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http://ane.boshu.ltd/owner/pay/api/ownerPay/callback&return_url=uiwjspay://&sign=re/+2SICQggOUjfxl7MtP/qzir2e+LdH4m+02gDcw0fkByO5MqXW/9bmXw+c4RMqo835OAjMZs7s966ZuDx2PB+hO0tJ/bzdHLLqYlBeCcETkrfwRx+AFZNgzsCn75eRCA7GONH35BpfSeGkQUZ+vNXftqd6hWaa7m/MhQYrjQcV98IVJM+UR67Gj68c+LM586cnk0+rbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd/beH0F8eqTVv8gW1ZTo5v/d/E2wSDGV1DciaEnCroTw==&sign_type=RSA2&timestamp=2020-07-09 09:50:41&version=1.0
 ```
 
 订单详情 `payInfo` 编码的数据
 
 ```bash
-alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=%7B+%22out_trade_no%22%3A%221111144444%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%2212321313655555555%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&return_url=http%3A%2F%2Fdomain.com%2FCallBack%2Freturn_url.jsp&sign=FP5fLb%2Fl2LoijO7k0BrmEvWKfuG7oIbYA%2F4VVL9mI0%2FSWAEzt27Zp09LK2xsDKaW0oGJ38aGhtDxGIHqZDMvbhTooB6jeRH%2B2m1wM5hyDq1vbc8CzfL%2BOSfRoQ3RQ4j50gbO0oABOUvaSb%2FxK8Tzix7HfDpMfjtqhN%2B81fiET2Q19dxcOmu22GAWE4%2FZPrbASsVfi1r%2FOXLdeDjkqdUTy9lOGJqg2bgTKy6BaYcelc%2FnEpuaF0mDXbHJX1vmra7vd8rhczy11rEVaHofMnPVZr3hucMuBH%2FfxOXQZuZcAmyaWr%2BNT8hVetxZaTgyhK9fqxjGcxPijc%2BpWWTwMxt4YA%3D%3D&sign_type=RSA2&timestamp=2020-07-08+17%3A07%3A36&version=1.0
+alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B+%22out_trade_no%22%3A%22123123123123123%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%221234%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&return_url=uiwjspay%3A%2F%2F&sign=re%2F%2B2SICQggOUjfxl7MtP%2Fqzir2e%2BLdH4m%2B02gDcw0fkByO5MqXW%2F9bmXw%2Bc4RMqo835OAjMZs7s966ZuDx2PB%2BhO0tJ%2FbzdHLLqYlBeCcETkrfwRx%2BAFZNgzsCn75eRCA7GONH35BpfSeGkQUZ%2BvNXftqd6hWaa7m%2FMhQYrjQcV98IVJM%2BUR67Gj68c%2BLM586cnk0%2Brbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd%2FbeH0F8eqTVv8gW1ZTo5v%2Fd%2FE2wSDGV1DciaEnCroTw%3D%3D&sign_type=RSA2&timestamp=2020-07-09+09%3A50%3A41&version=1.0
 ```
 
 - ⚠️ 后台 SDK 根据所有数据生成 `sign`，建议通过 API 拿到这个数据，拼接数据会报错。  
@@ -55,17 +55,16 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxxxxx&biz_content=
 
 ⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/b8b5b3e6e53bb23d1503cd9c565ad8f2132e2404/example/App.js#L6-L24) 监听事件请求后台 API，来优化这一用户体验。
 
-1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例为 `ap2021001172656340` 为定义的 `scheme` = `ap` + `appid`，`appid` 为支付宝分配给开发者的应用ID
+1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例 [`uiwjspay`](https://github.com/uiwjs/react-native-uiwjs-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08) 是定义的 `scheme`，你也可以定义为 `alipay` + `appid`，`appid` 为支付宝分配给开发者的应用ID，用来表述 `scheme` 唯一性。
 
 ```js
-// scheme = `ap` + `appid`
-Alipay.setAlipayScheme('ap2021001172656340');
+Alipay.setAlipayScheme('uiwjspay');
 ```
 
-2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=ap2021001172656340`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30)，`return_url` 的值为定义的 `scheme` => `ap2021001172656340://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
+2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=uiwjspay://`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30)，`return_url` 的值为定义的 `scheme` => `uiwjspay://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
 
 ```js
-// payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=ap2021001172656340://`
+// payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=uiwjspay://`
 Alipay.alipay(payInfo, (res)=>console.log(res))
 ```
 
@@ -85,7 +84,7 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
     <string></string>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>ap2021001172656340</string>
+      <string>uiwjspay</string>
     </array>
   </dict>
 </array>
@@ -108,7 +107,7 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 }
 ```
 
-命令测试 `xcrun simctl openurl booted ap2021001172656340://`
+命令测试 `xcrun simctl openurl booted uiwjspay://`
 
 ## 错误处理
 
