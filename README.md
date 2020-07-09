@@ -53,22 +53,22 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 
 ## 支付宝返回应用 iOS 设置
 
-⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/b8b5b3e6e53bb23d1503cd9c565ad8f2132e2404/example/App.js#L6-L24) 监听事件请求后台 API，来优化这一用户体验。
+⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L8-L24) 监听事件请求后台 API，来优化这一用户体验。
 
-1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L7)，下面实例 [`uiwjspay`](https://github.com/uiwjs/react-native-uiwjs-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08) 是定义的 `scheme`，你也可以定义为 `alipay` + `appid`，`appid` 为支付宝分配给开发者的应用ID，用来表述 `scheme` 唯一性。
+1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L7)，下面实例 [`uiwjspay`](https://github.com/uiwjs/react-native-uiwjs-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08) 是定义的 `scheme`，你也可以定义为 `alipay` + `appid`，`appid` 为支付宝分配给开发者的应用ID，用来表述 `scheme` 唯一性。
 
 ```js
 Alipay.setAlipayScheme('uiwjspay');
 ```
 
-2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=uiwjspay://`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30)，`return_url` 的值为定义的 `scheme` => `uiwjspay://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
+2. 在请求支付的 [`payInfo`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/1eff1dd94f3ae733db2913400e1aac382d056871/example/App.js#L27-L30) 中必须包含 [`return_url=uiwjspay://`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L27-L28)，`return_url` 的值为定义的 `scheme` => `uiwjspay://`，才会返回[支付宝订单支付状态结果](https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89)
 
 ```js
 // payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=uiwjspay://`
 Alipay.alipay(payInfo, (res)=>console.log(res))
 ```
 
-3. 用的 `URL Schemes` 列为白名单，在 [`ios/<应用名称>/Info.plist`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/866888a3ed9f05d06fa9a7ed93922d9ca2dcc56e/example/ios/example/Info.plist#L23-L41) 中添加
+3. 用的 `URL Schemes` 列为白名单，在 [`ios/<应用名称>/Info.plist`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/ios/example/Info.plist#L23-L41) 中添加
 
 ```xml
 <key>LSApplicationQueriesSchemes</key>
