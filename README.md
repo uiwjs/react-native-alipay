@@ -22,7 +22,9 @@ yarn add react-native-uiwjs-alipay
 $ cd ios && pod install
 ```
 
-## 使用支付 API
+## API
+
+### 支付 `Alipay.alipay`
 
 > - ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)  
 > - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
@@ -56,7 +58,7 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 - ⚠️ 后台 SDK 根据所有数据生成 `sign`，建议通过 API 拿到这个数据，拼接数据会报错。  
 - ⚠️ `out_trade_no` 订单 id 和 `sign` 签名 是唯一的，每次不一样，需要后台生成。  
 
-## 快速登录授权
+### 登录授权 `Alipay.authInfo`
 
 > - ⚠️ 注意授权成功返回结果是一个字符串
 > - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
