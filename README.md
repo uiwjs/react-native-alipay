@@ -124,7 +124,7 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 [NetworkInfo] Signal strength query returned error: Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied", descriptor: <CTServiceDescriptor 0x283317100, domain=1, instance=1>
 ```
 
-在 `Product` -> `Scheme` -> `Edit Scheme` -> `Run` -> `Environment Variables` 添加 `OS_ACTIVITY_MODE` `disable`
+在 `Product` -> `Scheme` -> `Edit Scheme` -> `Run` -> `Arguments` -> `Environment Variables` 添加 `OS_ACTIVITY_MODE` `disable`
 
 ## 其它
 
