@@ -26,9 +26,9 @@ $ cd ios && pod install
 
 ### 支付 `Alipay.alipay`
 
-> - ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)  
-> - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
-> - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付`
+- ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L50-L74)  
+- ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
+- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付`
 
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
@@ -60,9 +60,9 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 
 ### 登录授权 `Alipay.authInfo`
 
-> - ⚠️ 注意授权成功返回结果是一个字符串
-> - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
-> - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付宝登录`
+- ⚠️ 注意授权成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)  
+- ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
+- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付宝登录`
 
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
@@ -88,9 +88,8 @@ Alipay.authInfo(authInfoStr, (res)=> console.log(res))
 
 ## 支付宝返回应用 iOS 设置
 
-⚠️ Android 端不需要做任何设置。
-
-⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L8-L24) 监听事件请求后台 API，来优化这一用户体验。
+- ⚠️ Android 端不需要做任何设置。
+- ⚠️ 如果用户从 `支付宝App` 跳转到 `商家APP`，是通过系统功能切换，而不是通过 `支付宝APP` 功能键返回 `商家APP`，回调函数是不起作用的，可通过 [`AppState.addEventListener`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L8-L24) 监听事件请求后台 API，来优化这一用户体验。
 
 1. 在代码中设置支付宝 [`URL Schemes`](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L7)，下面实例 [`uiwjspay`](https://github.com/uiwjs/react-native-uiwjs-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08) 是定义的 `scheme`，你也可以定义为 `alipay` + `appid`，`appid` 为支付宝分配给开发者的应用ID，用来表述 `scheme` 唯一性。
 
