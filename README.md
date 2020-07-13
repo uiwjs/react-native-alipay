@@ -3,13 +3,17 @@ react-native-uiwjs-alipay
 
 基于 React Native 的宝支付插件。适用于商家在 App 应用中集成支付宝支付功能，商家 APP 调用支付宝提供的 SDK，SDK 再调用支付宝 APP 内的支付模块。如果用户已安装支付宝APP，商家APP会跳转到支付宝中完成支付，支付完后跳回到商家 APP 内，最后展示支付结果。如果用户没有安装支付宝 APP，商家 APP 内会调起支付宝网页支付收银台，用户登录支付宝账户，支付完后展示支付结果。完整实例 [Example](./example)
 
+![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/c0aa8379f5f57c55f1e5bf25e6f426d1.png)
+
+![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png)
+
 1. Android：支持2.3及以上的系统版本运行。
 2. iOS：iOS 6.0以上(包含iOS 6.0)。
 3. 支持手机系统：iOS（苹果）、Android（安卓）。
 4. 调试请注意 支付宝接入应用必须 `已审核通过`。
 5. 适用于 `react-native >= 0.60+` 低版本未测试。
 
-## Getting started
+## 安装依赖
 
 ```bash
 yarn add react-native-uiwjs-alipay
@@ -17,10 +21,11 @@ yarn add react-native-uiwjs-alipay
 $ cd ios && pod install
 ```
 
-## Usage
+## 使用支付 API
 
-> ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)  
-> 支付宝需要设置 `Scheme`
+> - ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/96c86045a92b7668b51658c3e696d3cd0e5f2f9e/index.d.ts#L2-L82)  
+> - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
+> - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付`
 
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
@@ -108,7 +113,10 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 }
 ```
 
-命令测试 `xcrun simctl openurl booted uiwjspay://`
+**命令测试**
+
+- iOS: `xcrun simctl openurl booted uiwjspay://`
+- Android：`adb shell am start -W -a android.intent.action.VIEW -d "uiwjspay://test/router" com.uiwjspay`
 
 ## 错误处理
 
@@ -128,7 +136,10 @@ npx create-react-native-module --package-identifier com.uiwjs --generate-example
 
 ## 相关连接 
 
-- [支付宝生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
-- [支付宝 SDK 下载地址，当前使用的是 AlipaySDK	15.7.7](https://opendocs.alipay.com/open/54/104509)
-- [客户端调试工具及使用教程](https://openclub.alipay.com/club/history/read/7695)
+- [支付宝：生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
+- [支付宝：SDK 下载地址，当前使用的是 AlipaySDK	15.7.7](https://opendocs.alipay.com/open/54/104509)
+- [支付宝：客户端调试工具及使用教程](https://openclub.alipay.com/club/history/read/7695)
+- [支付宝：支付，接入前准备](https://opendocs.alipay.com/open/204/105297/)
+- [支付宝：完整版授权 SDK 调用方法](https://opendocs.alipay.com/open/218/105325)
+- [支付宝：异步通知错误码: IllRet](https://opensupport.alipay.com/support/problem.htm?ant_source=antsupport)
 - [React-native 0.6版本集成支付宝-Alipay爬坑](https://segmentfault.com/a/1190000020758279)
