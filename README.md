@@ -58,6 +58,16 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 - ⚠️ 后台 SDK 根据所有数据生成 `sign`，建议通过 API 拿到这个数据，拼接数据会报错。  
 - ⚠️ `out_trade_no` 订单 id 和 `sign` 签名 是唯一的，每次不一样，需要后台生成。  
 
+支付返回结果，支付宝[返回结果参数说明](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L50-L74)：
+
+```json
+{ 
+  "result": "{\"alipay_trade_app_pay_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"app_id\":\"2021001172656340\",\"auth_app_id\":\"2021001172656340\",\"charset\":\"UTF-8\",\"timestamp\":\"2020-07-08 21:30:14\",\"out_trade_no\":\"123123213123214\",\"total_amount\":\"0.01\",\"trade_no\":\"2020070822001414841426413774\",\"seller_id\":\"2088421915791034\"},\"sign\":\"LY7wCsNLp+QnDqCq6VelY/RvyK7ZGY8wsXoKvS+Or7JjONLDUx5P6lDgqRKkpkng7br3y6GZzfGKaZ88Tf4eMnBMKyqU+huR2Um47xUxP383njvHlxuQZsSTLQZRswy4wmb/fPkFfvyH6Or6+oj0eboePOTu63bNr+h03w0QnP4znuHpfRuoVgWpsYh/6B1DL+4xfWRKJ21zm1SV9Feo9RWqnyTaGZyFVi6IKge0dUCYs9hXju95fOUVUOx5YflOFtSEnZafY9Ls4FCRQE1ANkjaKiKIE0+c4c4sEVEf/9Dwh88N+aSQOoLT+AV4RpjMoA8hF2k+vv2OKNeqr6SYGQ==\",\"sign_type\":\"RSA2\"}",
+  "resultStatus": "9000",
+  "memo": ""
+}
+```
+
 ### `Alipay.authInfo` 登录授权
 
 - ⚠️ 注意授权成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)  
@@ -76,11 +86,11 @@ Alipay.setAlipayScheme(scheme);
 Alipay.authInfo(authInfoStr, (res)=> console.log(res))
 ```
 
-授权返回结果，支付宝[返回结果参数说明](https://opendocs.alipay.com/open/218/105327#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E8%AF%B4%E6%98%8E)：
+授权返回结果，支付宝[返回结果参数说明](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)：
 
 ```json
 {
-  "resultStatus": 9000,
+  "resultStatus": "9000",
   "memo": "处理成功",
   "result": "success=true&result_code=200&app_id=202100117265&auth_code=8b6e5581b85WX84&scope=kuaijie&alipay_open_id=20881029919664670&user_id=20880025&target_id=15946456110003465"
 }
