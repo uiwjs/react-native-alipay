@@ -28,7 +28,7 @@ $ cd ios && pod install
 
 - ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L50-L74)  
 - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
-- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付`
+- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
 
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
@@ -62,7 +62,7 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 
 - ⚠️ 注意授权成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)  
 - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
-- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付宝登录`
+- ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付宝登录`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
 
 ```javascript
 import Alipay from 'react-native-uiwjs-alipay';
