@@ -47,13 +47,13 @@ export interface AliOrderResult {
 }
 
 
-
-interface Resule {
+interface OrderResult {
   /**
-   * "Error Domain=系统繁忙，请稍后再试 Code=1000 "(null)""
-   * 优惠券备注信息
+   * @callback AliOrderResult
+   * 支付返回结果：
+   * 支付宝支付返回结果文档地址：https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89  
+   * '{"alipay_trade_app_pay_response":{"code":"10000","msg":"Success","app_id":"2021001172656340","auth_app_id":"2021001172656340","charset":"UTF-8","timestamp":"2020-07-08 21:30:14","out_trade_no":"123123213123214","total_amount":"0.01","trade_no":"2020070822001414841426413774","seller_id":"2088421915791034"},"sign":"LY7wCsNLp+QnDqCq6VelY/RvyK7ZGY8wsXoKvS+Or7JjONLDUx5P6lDgqRKkpkng7br3y6GZzfGKaZ88Tf4eMnBMKyqU+huR2Um47xUxP383njvHlxuQZsSTLQZRswy4wmb/fPkFfvyH6Or6+oj0eboePOTu63bNr+h03w0QnP4znuHpfRuoVgWpsYh/6B1DL+4xfWRKJ21zm1SV9Feo9RWqnyTaGZyFVi6IKge0dUCYs9hXju95fOUVUOx5YflOFtSEnZafY9Ls4FCRQE1ANkjaKiKIE0+c4c4sEVEf/9Dwh88N+aSQOoLT+AV4RpjMoA8hF2k+vv2OKNeqr6SYGQ==","sign_type":"RSA2"}'
    */
-  memo: string;
   result?: string;
   /**
    * 9000	订单支付成功  
@@ -66,6 +66,11 @@ interface Resule {
    * 其它	其它支付错误
    */
   resultStatus?: '9000' | '8000' | '4000' | '5000' | '6001' | '6002' | '6004' | string;
+  /**
+   * "Error Domain=系统繁忙，请稍后再试 Code=1000 "(null)""
+   * 优惠券备注信息
+   */
+  memo: string;
 }
 
 // 错误返回
@@ -81,13 +86,46 @@ interface Resule {
 //   memo: ''
 // }
 
+/**
+ * 快速登录授权
+ * https://opendocs.alipay.com/open/218/105327#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E8%AF%B4%E6%98%8E  
+ */
+interface AuthResult {
+  /**
+   * 长度：144，本次操作返回的结果数据。
+   * - `result_code` 具体状态码值请参见“result_code状态代码”。仅当resultStatus为“9000”且result_code为“200”时，代表授权成功。
+   * - `auth_code` 表示授权成功的授码。
+   * @example `success=true&auth_code=9c11732de44f4f1790b63978b6fbOX53&result_code=200&alipay_open_id=20881001757376426161095132517425&user_id=2088003646494707`
+   */
+  result:	string; 
+  /**
+   * 长度：5，本次操作的状态返回值，标识本次调用的结果，参见“resultStatus状态代码”。
+   * - 9000	请求处理成功
+   * - 4000	系统异常
+   * - 6001	用户中途取消
+   * - 6002	网络连接出错
+   */
+  resultStatus:	9000 | 4000 | 6001 | 6002; 
+  /**
+   * 长度：无，保留参数，一般无内容。	处理成功
+   */
+  memo:	string; 
+}
+
 
 export const Alipay: {
   /**
+   * 支付
    * @param payInfo 支付详情
    * @param result 支付宝回调结果
    */
-  alipay: (payInfo: string, callback?: (result: Resule) => void) => void;
+  alipay: (payInfo: string, callback?: (result: OrderResult) => void) => void;
+  /**
+   * 快速登录授权
+   * @param authInfoStr 验证详情
+   * @param result 支付宝回调结果
+   */
+  authInfo: (authInfoStr: string, callback?: (result: AuthResult) => void) => void;
   /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme scheme = `ap` + `APPID`

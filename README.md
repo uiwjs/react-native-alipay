@@ -10,8 +10,9 @@ react-native-uiwjs-alipay
 1. Android：支持2.3及以上的系统版本运行。
 2. iOS：iOS 6.0以上(包含iOS 6.0)。
 3. 支持手机系统：iOS（苹果）、Android（安卓）。
-4. 调试请注意 支付宝接入应用必须 `已审核通过`。
-5. 适用于 `react-native >= 0.60+` 低版本未测试。
+4. 调试请注意 支付宝接入应用必须 `已审核通过` 状态。
+5. 支付宝开放平台-管理中心，签约 `APP支付` 和 `APP支付宝登录` 功能。
+6. 适用于 `react-native >= 0.60+` 低版本未测试。
 
 ## 安装依赖
 
@@ -54,6 +55,34 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 
 - ⚠️ 后台 SDK 根据所有数据生成 `sign`，建议通过 API 拿到这个数据，拼接数据会报错。  
 - ⚠️ `out_trade_no` 订单 id 和 `sign` 签名 是唯一的，每次不一样，需要后台生成。  
+
+## 快速登录授权
+
+> - ⚠️ 注意授权成功返回结果是一个字符串
+> - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
+> - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付宝登录`
+
+```javascript
+import Alipay from 'react-native-uiwjs-alipay';
+
+// 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`
+// scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID
+Alipay.setAlipayScheme(scheme);
+// 支付宝端支付
+// authInfoStr 是后台拼接好的验证参数
+// 如：apiname=com.alipay.account.auth&app_id=xxxxx&app_name=mc&auth_type=AUTHACCOUNT&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=xxxxx&product_id=APP_FAST_LOGIN&scope=kuaijie&sign_type=RSA2&target_id=20141225xxxx&sign=fMcp4GtiM6rxSIeFnJCVePJKV43eXrUP86CQgiLhDHH2u%2FdN75eEvmywc2ulkm7qKRetkU9fbVZtJIqFdMJcJ9Yp%2BJI%2FF%2FpESafFR6rB2fRjiQQLGXvxmDGVMjPSxHxVtIqpZy5FDoKUSjQ2%2FILDKpu3%2F%2BtAtm2jRw1rUoMhgt0%3D
+Alipay.authInfo(authInfoStr, (res)=> console.log(res))
+```
+
+授权返回结果，支付宝[返回结果参数说明](https://opendocs.alipay.com/open/218/105327#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E8%AF%B4%E6%98%8E)：
+
+```json
+{
+  "resultStatus": 9000,
+  "memo": "处理成功",
+  "result": "success=true&result_code=200&app_id=202100117265&auth_code=8b6e5581b85WX84&scope=kuaijie&alipay_open_id=20881029919664670&user_id=20880025&target_id=15946456110003465"
+}
+```
 
 ## 支付宝返回应用 iOS 设置
 

@@ -66,13 +66,24 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(setAlipayScheme:(NSString *)scheme){
     alipayScheme = scheme;
 }
+
 RCT_EXPORT_METHOD(alipay:(NSString *)info callback:(RCTResponseSenderBlock)callback)
 {
     alipayCallBack = callback;
     dispatch_async(dispatch_get_main_queue(), ^{
         [[AlipaySDK defaultService] payOrder:info fromScheme:alipayScheme callback:^(NSDictionary *resultDic) {
-            NSLog(@"alipay:callback");
-            
+            NSLog(@"alipay:payOrder:callback", resultDic);
+            callback([[NSArray alloc] initWithObjects:resultDic, nil]);
+        }];
+    });
+}
+
+RCT_EXPORT_METHOD(authInfo:(NSString *)info callback:(RCTResponseSenderBlock)callback)
+{
+    alipayCallBack = callback;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[AlipaySDK defaultService] auth_V2WithInfo:info fromScheme:alipayScheme callback:^(NSDictionary *resultDic) {
+            NSLog(@"alipay:auth_V2WithInfo:callback", resultDic);
             callback([[NSArray alloc] initWithObjects:resultDic, nil]);
         }];
     });

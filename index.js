@@ -12,6 +12,15 @@ export default class Alipay {
   }
 
   /**
+   * 支付宝授权请求信息
+   * @param infoStr 授权请求信息字串
+   * @param callback 授权结果回调  详情见 https://opendocs.alipay.com/open/218/105325
+   */
+  static authInfo(infoStr, callback) {
+    NativeModules.Alipay.authInfo(infoStr, callback)
+  }
+
+  /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme
    */
