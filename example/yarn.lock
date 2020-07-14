@@ -1109,7 +1109,7 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@uiwjs/react-native-alipay@link:..":
+"@uiw/react-native-alipay@link:..":
   version "0.0.0"
   uid ""
 

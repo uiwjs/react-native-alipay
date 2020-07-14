@@ -1,7 +1,7 @@
-@uiwjs/react-native-alipay
+@uiw/react-native-alipay
 ===
 
-[![NPM Version](https://img.shields.io/npm/v/@uiwjs/react-native-alipay.svg)](https://npmjs.org/package/@uiwjs/react-native-alipay)
+[![NPM Version](https://img.shields.io/npm/v/@uiw/react-native-alipay.svg)](https://npmjs.org/package/@uiw/react-native-alipay)
 
 基于 React Native 的宝支付插件，支持 iOS/Android。适用于商家在 App 应用中集成支付宝支付功能，商家 APP 调用支付宝提供的 SDK，SDK 再调用支付宝 APP 内的支付模块。如果用户已安装支付宝APP，商家APP会跳转到支付宝中完成支付，支付完后跳回到商家 APP 内，最后展示支付结果。如果用户没有安装支付宝 APP，商家 APP 内会调起支付宝网页支付收银台，用户登录支付宝账户，支付完后展示支付结果。完整实例 [Example](./example)
 
@@ -37,7 +37,7 @@ $ cd ios && pod install
 - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
 
 ```javascript
-import Alipay from 'react-native-uiwjs-alipay';
+import Alipay from '@uiw/react-native-alipay';
 
 // 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`
 // scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID
@@ -89,7 +89,7 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付宝登录`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
 
 ```javascript
-import Alipay from 'react-native-uiwjs-alipay';
+import Alipay from '@uiw/react-native-alipay';
 
 // 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`
 // scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID
@@ -120,7 +120,7 @@ async function authInfo() {
 > `Alipay.getVersion: () => Promise<string>;`
 
 ```js
-import Alipay from 'react-native-uiwjs-alipay';
+import Alipay from '@uiw/react-native-alipay';
 
 async function getVersion() {
   const version = await Alipay.getVersion();
