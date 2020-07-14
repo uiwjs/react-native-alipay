@@ -71,6 +71,12 @@ public class AlipayModule extends ReactContextBaseJavaModule {
         payThread.start();
     }
 
+    @ReactMethod
+    public void getVersion(Promise promise) {
+        PayTask payTask = new PayTask(getCurrentActivity());
+        promise.resolve(payTask.getVersion());
+    }
+
     private WritableMap getWritableMap(Map<String, String> map) {
         WritableMap writableMap = Arguments.createMap();
         for (Map.Entry<String, String> entry : map.entrySet()) {

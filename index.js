@@ -1,23 +1,30 @@
 import { NativeModules, Platform } from 'react-native';
 
 export default class Alipay {
-
   /**
-   * 支付宝端支付
+   * 支付
    * @param orderInfo 支付详情
-   * @param callback 支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
+   * @returns result 支付宝回调结果 https://docs.open.alipay.com/204/105301
    */
   static alipay(orderInfo) {
     return NativeModules.Alipay.alipay(orderInfo);
   }
 
   /**
-   * 支付宝授权请求信息
-   * @param infoStr 授权请求信息字串
-   * @param callback 授权结果回调  详情见 https://opendocs.alipay.com/open/218/105325
+   * 快速登录授权
+   * @param authInfoStr 验证详情
+   * @returns result 支付宝回调结果 详情见 https://opendocs.alipay.com/open/218/105325
    */
-  static authInfo(infoStr) {
-    return NativeModules.Alipay.authInfo(infoStr)
+  static authInfo(authInfoStr) {
+    return NativeModules.Alipay.authInfo(authInfoStr)
+  }
+
+  /**
+   *  获取当前版本号
+   *  @return 当前版本字符串
+   */
+  static getVersion() {
+    return NativeModules.Alipay.getVersion()
   }
 
   /**

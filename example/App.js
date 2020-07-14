@@ -3,6 +3,12 @@ import { Button, StyleSheet, Text, View, Linking, AppState } from 'react-native'
 import Alipay from 'react-native-uiwjs-alipay';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      version: '',
+    }
+  }
   componentDidMount() {
     Alipay.setAlipayScheme('uiwjspay');
   }
@@ -17,6 +23,11 @@ export default class App extends Component {
     const resule = await Alipay.authInfo(authInfoStr);
     // resule => success=true&auth_code=9c11732de44f4f1790b63978b6fbOX53&result_code=200&alipay_open_id=20881001757376426161095132517425&user_id=2088003646494707
     console.log('authInfo:resule-->>>', resule);
+  }
+  getVersion = async () => {
+    const version = await Alipay.getVersion();
+    this.setState({ version });
+    console.log('version:', version);
   }
   render() {
     return (
@@ -34,6 +45,12 @@ export default class App extends Component {
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
+        <Button
+          onPress={this.getVersion}
+          title="获取 SDK 版本"
+          color="#841584"
+        />
+        <Text>{this.state.version}</Text>
       </View>
     );
   }

@@ -20,6 +20,10 @@ RCT_EXPORT_MODULE()
     self = [super init];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:@"RCTOpenURLNotification" object:nil];
+        // 反注释下面代码，可以输出支付宝 SDK 调试信息，便于诊断问题
+        // [AlipaySDK startLogWithBlock:^(NSString* log){
+        //      NSLog(@"%@", log);
+        // }];
     }
     return self;
 }
@@ -80,7 +84,7 @@ RCT_EXPORT_MODULE()
     return NO;
 }
 
-RCT_EXPORT_METHOD(setAlipayScheme:(NSString *)scheme){
+RCT_EXPORT_METHOD(setAlipayScheme:(NSString *)scheme) {
     alipayScheme = scheme;
 }
 
@@ -95,6 +99,10 @@ RCT_EXPORT_METHOD(authInfo:(NSString *)info resolver:(RCTPromiseResolveBlock)res
     [AlipaySDK.defaultService auth_V2WithInfo:info fromScheme: alipayScheme callback:^(NSDictionary *resultDic) {
         resolve(resultDic);
     }];
+}
+
+RCT_EXPORT_METHOD(getVersion: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve([[AlipaySDK defaultService] currentVersion]);
 }
 
 /*! 

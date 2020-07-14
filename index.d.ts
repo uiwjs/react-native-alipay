@@ -127,6 +127,11 @@ export const Alipay: {
    */
   authInfo: (authInfoStr: string) => Promise<AuthResult>;
   /**
+   *  获取当前 SDK 版本号
+   *  @return 当前 SDK 版本字符串
+   */
+  getVersion: () => Promise<string>;
+  /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme scheme = `ap` + `APPID`
    */
