@@ -4,28 +4,28 @@ import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.app.EnvUtils;
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
+// import com.facebook.react.bridge.Callback;
 
 import java.util.Map;
 
-public class AlipayModule extends ReactContextBaseJavaModule {
+public class RNAlipayModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext reactContext;
 
-    public AlipayModule(ReactApplicationContext reactContext) {
+    public RNAlipayModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
     }
 
     @Override
     public String getName() {
-        return "Alipay";
+        return "RNAlipay";
     }
 
     // @ReactMethod

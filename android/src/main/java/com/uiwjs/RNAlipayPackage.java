@@ -10,10 +10,10 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
-public class AlipayPackage implements ReactPackage {
+public class RNAlipayPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new AlipayModule(reactContext));
+        return Arrays.<NativeModule>asList(new RNAlipayModule(reactContext));
     }
 
     @Override
