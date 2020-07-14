@@ -64,11 +64,6 @@ public class AlipayModule extends ReactContextBaseJavaModule {
                 PayTask alipay = new PayTask(getCurrentActivity());
                 Map<String, String> result = alipay.payV2(orderInfo, true);
                 promise.invoke(getWritableMap(result));
-                // WritableMap map = Arguments.createMap();
-                // map.putString("memo", result.get("memo"));
-                // map.putString("result", result.get("result"));
-                // map.putString("resultStatus", result.get("resultStatus"));
-                // promise.invoke(map);
             }
         };
         // 必须异步调用
