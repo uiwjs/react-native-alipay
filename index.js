@@ -7,8 +7,8 @@ export default class Alipay {
    * @param orderInfo 支付详情
    * @param callback 支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
    */
-  static alipay(orderInfo, callback) {
-    NativeModules.Alipay.alipay(orderInfo, callback)
+  static alipay(orderInfo) {
+    return NativeModules.Alipay.alipay(orderInfo);
   }
 
   /**
@@ -16,8 +16,8 @@ export default class Alipay {
    * @param infoStr 授权请求信息字串
    * @param callback 授权结果回调  详情见 https://opendocs.alipay.com/open/218/105325
    */
-  static authInfo(infoStr, callback) {
-    NativeModules.Alipay.authInfo(infoStr, callback)
+  static authInfo(infoStr) {
+    return NativeModules.Alipay.authInfo(infoStr)
   }
 
   /**

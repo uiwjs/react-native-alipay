@@ -35,14 +35,14 @@ public class AlipayModule extends ReactContextBaseJavaModule {
     // }
 
     @ReactMethod
-    public void authInfo(final String infoStr, final Callback promise) {
+    public void authInfo(final String infoStr, final Promise promise) {
         Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            AuthTask alipay = new AuthTask(getCurrentActivity());
-            Map<String, String> map = alipay.authV2(infoStr, true);
-            promise.invoke(getWritableMap(map));
-        }
+            @Override
+            public void run() {
+                AuthTask authTask = new AuthTask(getCurrentActivity());
+                Map<String, String> map = authTask.authV2(infoStr, true);
+                promise.resolve(getWritableMap(map));
+            }
         };
         Thread thread = new Thread(runnable);
         thread.start();
@@ -57,13 +57,13 @@ public class AlipayModule extends ReactContextBaseJavaModule {
         }
     }
     @ReactMethod
-    public void alipay(final String orderInfo, final Callback promise) {
+    public void alipay(final String orderInfo, final Promise promise) {
         Runnable payRunnable = new Runnable() {
             @Override
             public void run() {
                 PayTask alipay = new PayTask(getCurrentActivity());
                 Map<String, String> result = alipay.payV2(orderInfo, true);
-                promise.invoke(getWritableMap(result));
+                promise.resolve(getWritableMap(result));
             }
         };
         // 必须异步调用
@@ -74,7 +74,7 @@ public class AlipayModule extends ReactContextBaseJavaModule {
     private WritableMap getWritableMap(Map<String, String> map) {
         WritableMap writableMap = Arguments.createMap();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-        writableMap.putString(entry.getKey(), entry.getValue());
+            writableMap.putString(entry.getKey(), entry.getValue());
         }
         return writableMap;
     }

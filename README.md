@@ -7,6 +7,8 @@ react-native-uiwjs-alipay
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png)
 
+## 注意事项
+
 1. Android：支持2.3及以上的系统版本运行。
 2. iOS：iOS 6.0以上(包含iOS 6.0)。
 3. 支持手机系统：iOS（苹果）、Android（安卓）。
@@ -26,6 +28,8 @@ $ cd ios && pod install
 
 ### `Alipay.alipay` 支付
 
+> `Alipay.alipay: (payInfo: string) => Promise<OrderResult>;`
+
 - ⚠️ 注意支付成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L50-L74)  
 - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持支付和[回弹商家APP](#支付宝返回应用-ios-设置)的功能
 - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
@@ -38,9 +42,15 @@ import Alipay from 'react-native-uiwjs-alipay';
 Alipay.setAlipayScheme(scheme);
 // ⚠️ 目前不可用，设置支付宝沙箱环境，仅 Android 支持
 // Alipay.setAlipaySandbox(isSandbox);
-// 支付宝端支付
-// payInfo 是后台拼接好的支付参数
-Alipay.alipay(payInfo, (res)=> console.log(res))
+
+async function aliPay() {
+  // 支付宝端支付
+  // payInfo 是后台拼接好的支付参数
+  // return_url=
+  const payInfo = 'alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=2021001172656340&biz_content=%7B%22out_trade_no%22%3A%221111112222222%22%2C%22total_amount%22%3A%220.01%22%2C%22subject%22%3A%221234%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&sign=oUQmGtkv8mrhJ0YwHl9%2FfxMcoLACWuSFKiMTC4Id8nc%2FZVvDQ6MLQq5hhtEN03Qn1%2BAtzTAaofE8nNixdroxOek2l5YtOAcYcXVYlJIyogN%2B22erN2NpDTWJ7tQTKgYFDJLRiG0DZJaxfADhUUF6UR9kdA8omoXKLDlP17ZPUs5Jr4aKv5HJtH5C53ui7PbmyWYg934L4UDC2F%2F9pPQlRwwDeE1SAaV3HW9Dt83kK52o8%2FlChXdotbFdAvH0d4qYGhpEYU5sepj9xiOMyL9aC4pMXW9INYLLGbvtqtlRchZTAfH5yji6nqqQm9KKMmcVrWdBDLyjFVNpejq1UjbJBw%3D%3D&sign_type=RSA2&timestamp=2020-07-09+12%3A16%3A16&version=1.0';
+  const resule = await Alipay.alipay(payInfo);
+  console.log('alipay:resule-->>>', resule);
+}
 ```
 
 订单详情 [`payInfo`](https://opendocs.alipay.com/open/204/105295#%E5%BF%AB%E6%8D%B7%E8%AE%A2%E5%8D%95%E6%94%AF%E4%BB%98%20iOS) 编码前的数据
@@ -70,6 +80,8 @@ alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=xxxxxxxxxxxxx&biz_content=%7B
 
 ### `Alipay.authInfo` 登录授权
 
+> `Alipay.authInfo: (authInfoStr: string) => Promise<AuthResult>`;
+
 - ⚠️ 注意授权成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)  
 - ⚠️ 支付宝需要设置 `Scheme` 和 iOS添加原生代码，才能支持验证[回弹商家APP](#支付宝返回应用-ios-设置)的功能
 - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 [`APP支付宝登录`](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
@@ -80,10 +92,15 @@ import Alipay from 'react-native-uiwjs-alipay';
 // 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`
 // scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID
 Alipay.setAlipayScheme(scheme);
-// 支付宝端支付
-// authInfoStr 是后台拼接好的验证参数
-// 如：apiname=com.alipay.account.auth&app_id=xxxxx&app_name=mc&auth_type=AUTHACCOUNT&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=xxxxx&product_id=APP_FAST_LOGIN&scope=kuaijie&sign_type=RSA2&target_id=20141225xxxx&sign=fMcp4GtiM6rxSIeFnJCVePJKV43eXrUP86CQgiLhDHH2u%2FdN75eEvmywc2ulkm7qKRetkU9fbVZtJIqFdMJcJ9Yp%2BJI%2FF%2FpESafFR6rB2fRjiQQLGXvxmDGVMjPSxHxVtIqpZy5FDoKUSjQ2%2FILDKpu3%2F%2BtAtm2jRw1rUoMhgt0%3D
-Alipay.authInfo(authInfoStr, (res)=> console.log(res))
+
+async function authInfo() {
+  // 支付宝端授权验证
+  // authInfoStr 是后台拼接好的验证参数
+  const authInfoStr = 'app_name=mc&auth_type=AUTHACCOUNT&apiname=com.alipay.account.auth&biz_type=openservice&product_id=APP_FAST_LOGIN&scope=kuaijie&pid=2088421915791034&target_id=15946456110003465&app_id=2021001172656340&sign_type=RSA2&sign=keluG28qbbLwAcSDI4VmCNOGHJoF3xgpVeqXu1nCBCYo%2FlYYGe00fTfV9L4G73Sk7%2B4IwK%2BZV8IL%2F04cVtk6SR74lKAR3rYOoUdQ09ZrZFuQoUkO0vekajhp75IDQIg6PedCyY0SjFTqrHlH%2FImscBwitxrlSc9YbN7uW0gY34K8t7v8NhDoqzKJeoIz43UxF5U1DpUA1ISBVxwO7du1t6rYltsRhReayPS3hnvmwYSKQZUEgBvJ%2BT2XdyCaz%2FdGV907lYagPp1Oxkoaj%2FvW5NjNsRnid7vH944CoFj9XtBK%2FNTk2tBPTHFxYRQTEG1PkgkBohGpAWOFGGOuapH0ag%3D%3D';
+  const resule = await Alipay.authInfo(authInfoStr);
+  // resule => success=true&auth_code=9c11732de44f4f1790b63978b6fbOX53&result_code=200&alipay_open_id=20881001757376426161095132517425&user_id=2088003646494707
+  console.log('authInfo:resule-->>>', resule);
+}
 ```
 
 授权返回结果，支付宝[返回结果参数说明](https://github.com/uiwjs/react-native-uiwjs-alipay/blob/4c89c4e0e623e5073e4dc84a86978b1c5da18704/index.d.ts#L89-L113)：

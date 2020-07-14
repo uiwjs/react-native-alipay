@@ -1,6 +1,12 @@
 #import "Alipay.h"
 #import <AlipaySDK/AlipaySDK.h>
 
+
+@interface Alipay ()
+@property (nonatomic, copy) RCTPromiseResolveBlock payOrderResolve;
+@end
+
+
 @implementation Alipay
 {
     NSString *alipayScheme;
@@ -28,16 +34,27 @@ RCT_EXPORT_MODULE()
     NSString * aURLString =  [aNotification userInfo][@"url"];
     NSURL * aURL = [NSURL URLWithString:aURLString];
     if ([aURL.host isEqualToString:@"safepay"]) {
-        // 支付跳转支付宝钱包进行支付，处理支付结果
+        __weak __typeof__(self) weakSelf = self;
+        /**
+         *  处理支付宝app支付后跳回商户app携带的支付结果Url
+         *
+         *  @param resultUrl        支付宝app返回的支付结果url
+         *  @param completionBlock  支付结果回调 为nil时默认使用支付接口的completionBlock
+         */
         [[AlipaySDK defaultService] processOrderWithPaymentResult:aURL standbyCallback:^(NSDictionary *resultDic) {
-            if (self->alipayCallBack != nil) {
-                self->alipayCallBack([[NSArray alloc] initWithObjects:resultDic, nil]);
-                self->alipayCallBack = nil;
+            NSLog(@"result-->1 = %@", resultDic);
+            if (weakSelf.payOrderResolve) {
+                weakSelf.payOrderResolve(resultDic);
+                weakSelf.payOrderResolve = nil;
             }
-            NSLog(@"result-->1 = %@",resultDic);
         }];
 
-        // 授权跳转支付宝钱包进行支付，处理支付结果
+        /**
+         *  处理支付宝app授权后跳回商户app携带的授权结果Url
+         *
+         *  @param aURL        支付宝app返回的授权结果url
+         *  @param completionBlock  授权结果回调,用于处理跳转支付宝授权过程中商户APP被系统终止的情况
+         */
         [[AlipaySDK defaultService] processAuth_V2Result:aURL standbyCallback:^(NSDictionary *resultDic) {
             NSLog(@"result-->2 = %@", resultDic);
             // 解析 auth code
@@ -52,9 +69,9 @@ RCT_EXPORT_MODULE()
                     }
                 }
                 // 返回结果回调
-                if (self->alipayCallBack != nil) {
-                    self->alipayCallBack([[NSArray alloc] initWithObjects:resultArr, nil]);
-                    self->alipayCallBack = nil;
+                if (weakSelf.payOrderResolve) {
+                    weakSelf.payOrderResolve([[NSArray alloc] initWithObjects:resultArr, nil]);
+                    weakSelf.payOrderResolve = nil;
                 }
             }
             NSLog(@"授权结果 authCode = %@", authCode?:@"");
@@ -67,24 +84,17 @@ RCT_EXPORT_METHOD(setAlipayScheme:(NSString *)scheme){
     alipayScheme = scheme;
 }
 
-RCT_EXPORT_METHOD(alipay:(NSString *)info callback:(RCTResponseSenderBlock)callback)
-{
-    alipayCallBack = callback;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[AlipaySDK defaultService] payOrder:info fromScheme: alipayScheme callback:^(NSDictionary *resultDic) {
-            callback([[NSArray alloc] initWithObjects:resultDic, nil]);
-        }];
-    });
+RCT_EXPORT_METHOD(alipay:(NSString *)info resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    self.payOrderResolve = resolve;
+    [AlipaySDK.defaultService payOrder:info fromScheme: alipayScheme callback:^(NSDictionary *resultDic) {
+        resolve(resultDic);
+    }];
 }
 
-RCT_EXPORT_METHOD(authInfo:(NSString *)info callback:(RCTResponseSenderBlock)callback)
-{
-    alipayCallBack = callback;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[AlipaySDK defaultService] auth_V2WithInfo:info fromScheme:alipayScheme callback:^(NSDictionary *resultDic) {
-            callback([[NSArray alloc] initWithObjects:resultDic, nil]);
-        }];
-    });
+RCT_EXPORT_METHOD(authInfo:(NSString *)info resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    [AlipaySDK.defaultService auth_V2WithInfo:info fromScheme: alipayScheme callback:^(NSDictionary *resultDic) {
+        resolve(resultDic);
+    }];
 }
 
 /*! 

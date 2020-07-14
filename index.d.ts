@@ -117,15 +117,15 @@ export const Alipay: {
   /**
    * 支付
    * @param payInfo 支付详情
-   * @param result 支付宝回调结果
+   * @returns result 支付宝回调结果 https://docs.open.alipay.com/204/105301
    */
-  alipay: (payInfo: string, callback?: (result: OrderResult) => void) => void;
+  alipay: (payInfo: string) => Promise<OrderResult>;
   /**
    * 快速登录授权
    * @param authInfoStr 验证详情
-   * @param result 支付宝回调结果
+   * @returns result 支付宝回调结果 https://opendocs.alipay.com/open/218/105327
    */
-  authInfo: (authInfoStr: string, callback?: (result: AuthResult) => void) => void;
+  authInfo: (authInfoStr: string) => Promise<AuthResult>;
   /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme scheme = `ap` + `APPID`
