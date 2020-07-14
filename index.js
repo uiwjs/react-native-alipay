@@ -7,7 +7,7 @@ export default class Alipay {
    * @returns result 支付宝回调结果 https://docs.open.alipay.com/204/105301
    */
   static alipay(orderInfo) {
-    return NativeModules.Alipay.alipay(orderInfo);
+    return NativeModules.RNAlipay.alipay(orderInfo);
   }
 
   /**
@@ -16,7 +16,7 @@ export default class Alipay {
    * @returns result 支付宝回调结果 详情见 https://opendocs.alipay.com/open/218/105325
    */
   static authInfo(authInfoStr) {
-    return NativeModules.Alipay.authInfo(authInfoStr)
+    return NativeModules.RNAlipay.authInfo(authInfoStr)
   }
 
   /**
@@ -24,7 +24,7 @@ export default class Alipay {
    *  @return 当前版本字符串
    */
   static getVersion() {
-    return NativeModules.Alipay.getVersion()
+    return NativeModules.RNAlipay.getVersion()
   }
 
   /**
@@ -33,7 +33,7 @@ export default class Alipay {
    */
   static setAlipayScheme(scheme) {
     if (Platform.OS === 'ios') {
-      NativeModules.Alipay.setAlipayScheme(scheme);
+      NativeModules.RNAlipay.setAlipayScheme(scheme);
     }
   }
 
@@ -43,7 +43,7 @@ export default class Alipay {
    */
   static setAlipaySandbox(isSandBox) {
     if (Platform.OS === 'android') {
-      NativeModules.Alipay.setAlipaySandbox(isSandBox);
+      NativeModules.RNAlipay.setAlipaySandbox(isSandBox);
     }
   }
 }

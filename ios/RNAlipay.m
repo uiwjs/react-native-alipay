@@ -1,16 +1,15 @@
-#import "Alipay.h"
+#import "RNAlipay.h"
 #import <AlipaySDK/AlipaySDK.h>
 
 
-@interface Alipay ()
+@interface RNAlipay ()
 @property (nonatomic, copy) RCTPromiseResolveBlock payOrderResolve;
 @end
 
 
-@implementation Alipay
+@implementation RNAlipay
 {
     NSString *alipayScheme;
-    RCTResponseSenderBlock alipayCallBack;
 }
 
 RCT_EXPORT_MODULE()
@@ -83,6 +82,7 @@ RCT_EXPORT_MODULE()
     }
     return NO;
 }
+
 
 RCT_EXPORT_METHOD(setAlipayScheme:(NSString *)scheme) {
     alipayScheme = scheme;

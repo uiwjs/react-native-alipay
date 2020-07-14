@@ -1,24 +1,25 @@
 require "json"
 
-package = JSON.parse(File.read(File.join(__dir__, "..", "package.json")))
+package = JSON.parse(File.read(File.join(__dir__, '..', "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = "Alipay"
+  s.name         = "RNAlipay"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.description  = <<-DESC
-                    Alipay SDK for React Native
+                      Alipay SDK for React Native
                    DESC
-  s.homepage     = "https://github.com/uiwjs/react-native-alipay"
+  s.homepage     = package['repository']['url']
   # brief license entry:
-  s.license      = "MIT"
+  s.license      = package["license"]
+  s.author       = { package["author"]["name"] => package["author"]["email"] }
   # optional - use expanded license entry instead:
   # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Kenny Wong" => "wowohoo@qq.com" }
   s.platforms    = { :ios => "9.0" }
   s.source       = { :git => "https://github.com/uiwjs/react-native-alipay.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,c,m,swift}"
+  s.source_files = "**/*.{h,c,m,swift}"
+  # s.source_files = "**/*.{h,m}"
   s.requires_arc = true
 
   s.dependency "React"

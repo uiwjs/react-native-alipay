@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B954DB6F24B48377005C7268 /* AlipaySDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B954DB6E24B48377005C7268 /* AlipaySDK */; };
+		B9EB6BD424BDF5E6001A2514 /* AlipaySDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B9EB6BCF24BDF342001A2514 /* AlipaySDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libAlipay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAlipay.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B954DB6C24B48352005C7268 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		B954DB6E24B48377005C7268 /* AlipaySDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AlipaySDK; path = AlipaySDK.framework/AlipaySDK; sourceTree = "<group>"; };
+		134814201AA4EA6300B7C361 /* libRNAlipay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNAlipay.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9EB6BCD24BDF163001A2514 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		B9EB6BCF24BDF342001A2514 /* AlipaySDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AlipaySDK; path = AlipaySDK.framework/AlipaySDK; sourceTree = "<group>"; };
+		B9EB6BD524BDF691001A2514 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B954DB6F24B48377005C7268 /* AlipaySDK in Frameworks */,
+				B9EB6BD424BDF5E6001A2514 /* AlipaySDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +44,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libAlipay.a */,
+				134814201AA4EA6300B7C361 /* libRNAlipay.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,15 +53,16 @@
 			isa = PBXGroup;
 			children = (
 				134814211AA4EA7D00B7C361 /* Products */,
-				B954DB6B24B48352005C7268 /* Frameworks */,
+				B9EB6BCC24BDF163001A2514 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		B954DB6B24B48352005C7268 /* Frameworks */ = {
+		B9EB6BCC24BDF163001A2514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B954DB6E24B48377005C7268 /* AlipaySDK */,
-				B954DB6C24B48352005C7268 /* AlipaySDK.bundle */,
+				B9EB6BD524BDF691001A2514 /* AlipaySDK.bundle */,
+				B9EB6BCF24BDF342001A2514 /* AlipaySDK */,
+				B9EB6BCD24BDF163001A2514 /* AlipaySDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* Alipay */ = {
+		58B511DA1A9E6C8500147676 /* RNAlipay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "Alipay" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNAlipay" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -80,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = Alipay;
+			name = RNAlipay;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libAlipay.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libRNAlipay.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "Alipay" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNAlipay" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* Alipay */,
+				58B511DA1A9E6C8500147676 /* RNAlipay */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +244,10 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -250,7 +256,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Alipay;
+				PRODUCT_NAME = RNAlipay;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -258,6 +264,10 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -266,7 +276,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Alipay;
+				PRODUCT_NAME = RNAlipay;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -274,7 +284,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "Alipay" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNAlipay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -283,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "Alipay" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNAlipay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,

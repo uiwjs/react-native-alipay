@@ -1,12 +1,13 @@
 {
   "name": "@uiw/react-native-alipay",
   "version": "2.0.6",
-  "description": "基于 React Native 的宝支付插件，支持Android/iOS。",
+  "description": "基于 React Native 的支付宝插件，支持Android/iOS。",
   "main": "index.js",
   "files": [
     "README.md",
     "android",
     "index.js",
+    "index.d.ts",
     "ios",
     "react-native-alipay.podspec"
   ],

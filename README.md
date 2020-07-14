@@ -17,6 +17,7 @@
 4. 调试请注意 支付宝接入应用必须 `已审核通过` 状态。
 5. 支付宝开放平台-管理中心，签约 `APP支付` 和 `APP支付宝登录` 功能。
 6. 适用于 `react-native >= 0.60+` 低版本未测试。
+7. AlipaySDK 15.7.7 已更新到最新的支付宝 SDK 版本。
 
 ## 安装依赖
 
@@ -203,7 +204,7 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 当前工程基于 [@brodybits/create-react-native-module](https://github.com/brodybits/create-react-native-module) 初始化。
 
 ```bash
-npx create-react-native-module --package-identifier com.uiwjs --generate-example Alipay --example-react-native-version 0.62.2 --module-name react-native-uiwjs-alipay --github-account uiwjs --author-name "Kenny Wong" --author-email "wowohoo@qq.com"
+npx create-react-native-module --package-identifier com.uiwjs --object-class-name RNAlipay --generate-example Alipay --example-react-native-version 0.63.0 --module-name @uiw/react-native-alipay --github-account uiwjs --author-name "Kenny Wong" --author-email "wowohoo@qq.com"
 ```
 
 ## 相关连接 
