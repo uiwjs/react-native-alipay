@@ -21,7 +21,7 @@
 ## 安装依赖
 
 ```bash
-yarn add react-native-uiwjs-alipay
+yarn add @uiw/react-native-alipay
 # react-native version >= 0.60+
 $ cd ios && pod install
 ```
