@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Linking, AppState } from 'react-native';
-import Alipay from 'react-native-uiwjs-alipay';
+import Alipay from '@uiwjs/react-native-alipay';
 
 export default class App extends Component {
   constructor(props) {

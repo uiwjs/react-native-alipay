@@ -1,25 +1,31 @@
 {
-  "name": "react-native-uiwjs-alipay",
+  "name": "@uiwjs/react-native-alipay",
   "version": "1.5.1",
-  "description": "基于 React Native 的宝支付插件",
+  "description": "基于 React Native 的宝支付插件，支持Android/iOS。",
   "main": "index.js",
   "files": [
     "README.md",
     "android",
     "index.js",
     "ios",
-    "react-native-uiwjs-alipay.podspec"
+    "react-native-alipay.podspec"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uiwjs/react-native-uiwjs-alipay.git",
-    "baseUrl": "https://github.com/uiwjs/react-native-uiwjs-alipay"
+    "url": "git+https://github.com/uiwjs/react-native-alipay.git",
+    "baseUrl": "https://github.com/uiwjs/react-native-alipay"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "alipay",
+    "uiwjs",
+    "uiw",
+    "支付宝",
+    "ios",
+    "android"
   ],
   "author": {
     "name": "Kenny Wong",
