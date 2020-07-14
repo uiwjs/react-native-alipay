@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Linking, AppState } from 'react-native';
+import { StyleSheet, Button, Text, View, Linking, AppState } from 'react-native';
 import Alipay from '@uiw/react-native-alipay';
 
 export default class App extends Component {
@@ -67,10 +67,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
