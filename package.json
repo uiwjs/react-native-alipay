@@ -8,8 +8,7 @@
     "android",
     "index.js",
     "index.d.ts",
-    "ios",
-    "react-native-alipay.podspec"
+    "ios"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
