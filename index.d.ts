@@ -134,11 +134,13 @@ export const Alipay: {
   /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme scheme = `ap` + `APPID`
+   * @platform ios
    */
   setAlipayScheme: (scheme: string) => void;
   /**
    * 设置支付宝沙箱环境，仅 Android
    * @param isSandBox
+   * @platform android
    */
   setAlipaySandbox: (isSandbox: boolean) => void;
 };
