@@ -30,6 +30,7 @@ export default class Alipay {
   /**
    * 设置支付宝跳转Scheme，仅 iOS
    * @param scheme
+   * @platform ios
    */
   static setAlipayScheme(scheme) {
     if (Platform.OS === 'ios') {
@@ -40,6 +41,7 @@ export default class Alipay {
   /**
    * 设置支付宝沙箱环境，仅 Android
    * @param isSandBox
+   * @platform android
    */
   static setAlipaySandbox(isSandBox) {
     if (Platform.OS === 'android') {
