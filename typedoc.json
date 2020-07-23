@@ -1,0 +1,12 @@
+{
+  "inputFiles": "./index.d.ts",
+  "out": "typedoc",
+  "entryPoint": "Alipay",
+  "name": "React Native Alipay",
+  "mode": "file",
+  "includeDeclarations": true,
+  "excludeExternals": true,
+  "ignoreCompilerErrors": true,
+  "excludePrivate": true,
+  "excludeProtected": true
+}

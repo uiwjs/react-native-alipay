@@ -3,6 +3,7 @@
   "version": "2.0.7",
   "description": "基于 React Native 的支付宝插件，支持Android/iOS。",
   "main": "index.js",
+  "typings": "index.d.ts",
   "files": [
     "README.md",
     "android",
@@ -11,7 +12,7 @@
     "ios"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "typedoc"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
   },
   "devDependencies": {
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react-native": "^0.61.5",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.7"
   }
 }

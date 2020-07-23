@@ -4,9 +4,11 @@
 
 # node.js
 #
+typedoc
 node_modules/
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # Xcode
 #
