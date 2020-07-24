@@ -4,8 +4,7 @@
 /**
  * 支付宝支付，基于 React Native 的支付宝插件，支持Android/iOS。
  */
-declare namespace Alipay {
-
+declare module "@uiw/react-native-alipay" {
   /**
    * 支付宝端支付
    * 支付宝回调结果, 详情见 https://docs.open.alipay.com/204/105301
