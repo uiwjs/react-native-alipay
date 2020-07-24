@@ -42,7 +42,7 @@
   "devDependencies": {
     "react": "16.13.1",
     "react-native": "0.63.0",
-    "typedoc": "^0.17.8",
-    "typescript": "^3.9.7"
+    "typedoc": "0.17.8",
+    "typescript": "3.9.7"
   }
 }
