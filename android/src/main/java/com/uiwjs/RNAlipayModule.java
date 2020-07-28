@@ -1,4 +1,4 @@
-package com.uiwjs;
+package com.uiwjs.alipay;
 
 import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
