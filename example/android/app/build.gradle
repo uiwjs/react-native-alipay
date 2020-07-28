@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example"
+        applicationId "com.uiwjs.example.alipay"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

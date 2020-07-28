@@ -1,4 +1,4 @@
-package com.example;
+package com.uiwjs.example.alipay;
 
 import com.facebook.react.ReactActivity;
 
