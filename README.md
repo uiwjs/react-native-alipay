@@ -207,6 +207,16 @@ Alipay.alipay(payInfo, (res)=>console.log(res))
 npx create-react-native-module --package-identifier com.uiwjs --object-class-name RNAlipay --generate-example Alipay --example-react-native-version 0.63.0 --module-name @uiw/react-native-alipay --github-account uiwjs --author-name "Kenny Wong" --author-email "wowohoo@qq.com"
 ```
 
+## 开发
+
+```bash
+cd example   # 进入实例 example 工程，根目录不需要安装，会引发错误
+yarn install # 安装依赖
+
+cd ios     # 进入 example/ios 目录安装依赖
+pod instll # 安装依赖
+```
+
 ## 相关连接 
 
 - [支付宝：生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
