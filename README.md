@@ -220,9 +220,8 @@ pod instll # 安装依赖
 ## 相关连接 
 
 - [支付宝：生成秘钥指南](https://opendocs.alipay.com/open/291/105971)
-- [支付宝：SDK 下载地址，当前使用的是 AlipaySDK	15.7.7](https://opendocs.alipay.com/open/54/104509)
+- [支付宝：SDK 下载地址，当前使用的是 AlipaySDK	15.7.9](https://opendocs.alipay.com/open/54/104509)
 - [支付宝：客户端调试工具及使用教程](https://openclub.alipay.com/club/history/read/7695)
 - [支付宝：支付，接入前准备](https://opendocs.alipay.com/open/204/105297/)
 - [支付宝：完整版授权 SDK 调用方法](https://opendocs.alipay.com/open/218/105325)
 - [支付宝：异步通知错误码: IllRet](https://opensupport.alipay.com/support/problem.htm?ant_source=antsupport)
-- [React-native 0.6版本集成支付宝-Alipay爬坑](https://segmentfault.com/a/1190000020758279)
