@@ -231,3 +231,4 @@ pod instll # 安装依赖
 - [支付宝：支付，接入前准备](https://opendocs.alipay.com/open/204/105297/)
 - [支付宝：完整版授权 SDK 调用方法](https://opendocs.alipay.com/open/218/105325)
 - [支付宝：异步通知错误码: IllRet](https://opensupport.alipay.com/support/problem.htm?ant_source=antsupport)
+- [@uiw/react-native-wechat](https://github.com/uiwjs/react-native-wechat) 微信支付。
