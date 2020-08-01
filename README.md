@@ -1,5 +1,8 @@
-@uiw/react-native-alipay
-===
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1680273/89095947-f0046900-d404-11ea-83ec-2408267efaa7.png" height="100" />
+  <h1>@uiw/react-native-alipay</h1>
+<p>
+
 
 [![NPM Version](https://img.shields.io/npm/v/@uiw/react-native-alipay.svg)](https://npmjs.org/package/@uiw/react-native-alipay)
 
