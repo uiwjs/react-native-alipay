@@ -62,46 +62,47 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#uiwreact-native-alipay" id="uiwreact-native-alipay" style="color: inherit; text-decoration: none;">
+				<p align="center">
+					<img src="https://user-images.githubusercontent.com/1680273/89095947-f0046900-d404-11ea-83ec-2408267efaa7.png" height="100" />
 					<h1>@uiw/react-native-alipay</h1>
-				</a>
-				<p><a href="https://npmjs.org/package/@uiw/react-native-alipay"><img src="https://img.shields.io/npm/v/@uiw/react-native-alipay.svg" alt="NPM Version"></a></p>
-				<p>基于 React Native 的宝支付插件，支持 iOS/Android。适用于商家在 App 应用中集成支付宝支付功能，商家 APP 调用支付宝提供的 SDK，SDK 再调用支付宝 APP 内的支付模块。如果用户已安装支付宝APP，商家APP会跳转到支付宝中完成支付，支付完后跳回到商家 APP 内，最后展示支付结果。如果用户没有安装支付宝 APP，商家 APP 内会调起支付宝网页支付收银台，用户登录支付宝账户，支付完后展示支付结果。完整实例 <a href="./example">Example</a> | <a href="https://uiwjs.github.io/react-native-alipay/">完整的接口文档</a></p>
-				<p><img src="https://gw.alipayobjects.com/zos/skylark-tools/public/files/c0aa8379f5f57c55f1e5bf25e6f426d1.png" alt=""></p>
-				<p><img src="https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png" alt=""></p>
-				<a href="#注意事项" id="注意事项" style="color: inherit; text-decoration: none;">
-					<h2>注意事项</h2>
-				</a>
-				<ol>
-					<li>Android：支持2.3及以上的系统版本运行。</li>
-					<li>iOS：iOS 6.0以上(包含iOS 6.0)。</li>
-					<li>支持手机系统：iOS（苹果）、Android（安卓）。</li>
-					<li>调试请注意 支付宝接入应用必须 <code>已审核通过</code> 状态。</li>
-					<li>支付宝开放平台-管理中心，签约 <code>APP支付</code> 和 <code>APP支付宝登录</code> 功能。</li>
-					<li>适用于 <code>react-native &gt;= 0.60+</code> 低版本未测试。</li>
-					<li>AlipaySDK 15.7.7 已更新到最新的支付宝 SDK 版本。</li>
-				</ol>
-				<a href="#安装依赖" id="安装依赖" style="color: inherit; text-decoration: none;">
-					<h2>安装依赖</h2>
-				</a>
-				<pre><code class="language-bash">yarn add @uiw/react-native-alipay
+					<p>
+						<p><a href="https://npmjs.org/package/@uiw/react-native-alipay"><img src="https://img.shields.io/npm/v/@uiw/react-native-alipay.svg" alt="NPM Version"></a></p>
+						<p>基于 React Native 的宝支付插件，支持 iOS/Android。适用于商家在 App 应用中集成支付宝支付功能，商家 APP 调用支付宝提供的 SDK，SDK 再调用支付宝 APP 内的支付模块。如果用户已安装支付宝APP，商家APP会跳转到支付宝中完成支付，支付完后跳回到商家 APP 内，最后展示支付结果。如果用户没有安装支付宝 APP，商家 APP 内会调起支付宝网页支付收银台，用户登录支付宝账户，支付完后展示支付结果。完整实例 <a href="./example">Example</a> | <a href="https://uiwjs.github.io/react-native-alipay/">完整的接口文档</a></p>
+						<p><img src="https://gw.alipayobjects.com/zos/skylark-tools/public/files/c0aa8379f5f57c55f1e5bf25e6f426d1.png" alt=""></p>
+						<p><img src="https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png" alt=""></p>
+						<a href="#注意事项" id="注意事项" style="color: inherit; text-decoration: none;">
+							<h2>注意事项</h2>
+						</a>
+						<ol>
+							<li>Android：支持2.3及以上的系统版本运行。</li>
+							<li>iOS：iOS 6.0以上(包含iOS 6.0)。</li>
+							<li>支持手机系统：iOS（苹果）、Android（安卓）。</li>
+							<li>调试请注意 支付宝接入应用必须 <code>已审核通过</code> 状态。</li>
+							<li>支付宝开放平台-管理中心，签约 <code>APP支付</code> 和 <code>APP支付宝登录</code> 功能。</li>
+							<li>适用于 <code>react-native &gt;= 0.60+</code> 低版本未测试。</li>
+							<li>AlipaySDK 15.7.7 已更新到最新的支付宝 SDK 版本。</li>
+						</ol>
+						<a href="#安装依赖" id="安装依赖" style="color: inherit; text-decoration: none;">
+							<h2>安装依赖</h2>
+						</a>
+						<pre><code class="language-bash">yarn add @uiw/react-native-alipay
 <span class="hljs-comment"># react-native version &gt;= 0.60+</span>
 $ <span class="hljs-built_in">cd</span> ios &amp;&amp; pod install</code></pre>
-				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-					<h2>API</h2>
-				</a>
-				<a href="#alipayalipay-支付" id="alipayalipay-支付" style="color: inherit; text-decoration: none;">
-					<h3><code>Alipay.alipay</code> 支付</h3>
-				</a>
-				<blockquote>
-					<p><code>Alipay.alipay: (payInfo: string) =&gt; Promise&lt;OrderResult&gt;;</code></p>
-				</blockquote>
-				<ul>
-					<li>⚠️ 注意支付成功返回结果是一个字符串，<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L50-L74">返回内容</a>  </li>
-					<li>⚠️ 支付宝需要设置 <code>Scheme</code> 和 iOS添加原生代码，才能支持支付和<a href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%94%E5%9B%9E%E5%BA%94%E7%94%A8-ios-%E8%AE%BE%E7%BD%AE">回弹商家APP</a>的功能</li>
-					<li>⚠️ 支付宝 <code>管理中心-支付宝开放平台</code> 需要签约 <a href="https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD"><code>APP支付</code></a></li>
-				</ul>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
+						<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+							<h2>API</h2>
+						</a>
+						<a href="#alipayalipay-支付" id="alipayalipay-支付" style="color: inherit; text-decoration: none;">
+							<h3><code>Alipay.alipay</code> 支付</h3>
+						</a>
+						<blockquote>
+							<p><code>Alipay.alipay: (payInfo: string) =&gt; Promise&lt;OrderResult&gt;;</code></p>
+						</blockquote>
+						<ul>
+							<li>⚠️ 注意支付成功返回结果是一个字符串，<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L50-L74">返回内容</a>  </li>
+							<li>⚠️ 支付宝需要设置 <code>Scheme</code> 和 iOS添加原生代码，才能支持支付和<a href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%94%E5%9B%9E%E5%BA%94%E7%94%A8-ios-%E8%AE%BE%E7%BD%AE">回弹商家APP</a>的功能</li>
+							<li>⚠️ 支付宝 <code>管理中心-支付宝开放平台</code> 需要签约 <a href="https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD"><code>APP支付</code></a></li>
+						</ul>
+						<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
 
 <span class="hljs-comment">// 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`</span>
 <span class="hljs-comment">// scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID</span>
@@ -117,32 +118,32 @@ Alipay.setAlipayScheme(scheme);
   <span class="hljs-keyword">const</span> resule = <span class="hljs-keyword">await</span> Alipay.alipay(payInfo);
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;alipay:resule--&gt;&gt;&gt;&#x27;</span>, resule);
 }</code></pre>
-				<p>订单详情 <a href="https://opendocs.alipay.com/open/204/105295#%E5%BF%AB%E6%8D%B7%E8%AE%A2%E5%8D%95%E6%94%AF%E4%BB%98%20iOS"><code>payInfo</code></a> 编码前的数据</p>
-				<pre><code class="language-bash">alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;app_id=xxxxxxxxxxxxx&amp;biz_content={ <span class="hljs-string">&quot;out_trade_no&quot;</span>:<span class="hljs-string">&quot;123123123123123&quot;</span>, <span class="hljs-string">&quot;total_amount&quot;</span>:<span class="hljs-string">&quot;0.01&quot;</span>, <span class="hljs-string">&quot;subject&quot;</span>:<span class="hljs-string">&quot;1234&quot;</span>, <span class="hljs-string">&quot;product_code&quot;</span>:<span class="hljs-string">&quot;QUICK_MSECURITY_PAY&quot;</span> }&amp;charset=UTF-8&amp;format=json&amp;method=alipay.trade.app.pay&amp;notify_url=http://ane.boshu.ltd/owner/pay/api/ownerPay/callback&amp;return_url=uiwjspay://&amp;sign=re/+2SICQggOUjfxl7MtP/qzir2e+LdH4m+02gDcw0fkByO5MqXW/9bmXw+c4RMqo835OAjMZs7s966ZuDx2PB+hO0tJ/bzdHLLqYlBeCcETkrfwRx+AFZNgzsCn75eRCA7GONH35BpfSeGkQUZ+vNXftqd6hWaa7m/MhQYrjQcV98IVJM+UR67Gj68c+LM586cnk0+rbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd/beH0F8eqTVv8gW1ZTo5v/d/E2wSDGV1DciaEnCroTw==&amp;sign_type=RSA2&amp;timestamp=2020-07-09 09:50:41&amp;version=1.0</code></pre>
-				<p>订单详情 <code>payInfo</code> 编码的数据</p>
-				<pre><code class="language-bash">alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;app_id=xxxxxxxxxxxxx&amp;biz_content=%7B+%22out_trade_no%22%3A%22123123123123123%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%221234%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&amp;charset=UTF-8&amp;format=json&amp;method=alipay.trade.app.pay&amp;notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&amp;return_url=uiwjspay%3A%2F%2F&amp;sign=re%2F%2B2SICQggOUjfxl7MtP%2Fqzir2e%2BLdH4m%2B02gDcw0fkByO5MqXW%2F9bmXw%2Bc4RMqo835OAjMZs7s966ZuDx2PB%2BhO0tJ%2FbzdHLLqYlBeCcETkrfwRx%2BAFZNgzsCn75eRCA7GONH35BpfSeGkQUZ%2BvNXftqd6hWaa7m%2FMhQYrjQcV98IVJM%2BUR67Gj68c%2BLM586cnk0%2Brbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd%2FbeH0F8eqTVv8gW1ZTo5v%2Fd%2FE2wSDGV1DciaEnCroTw%3D%3D&amp;sign_type=RSA2&amp;timestamp=2020-07-09+09%3A50%3A41&amp;version=1.0</code></pre>
-				<ul>
-					<li>⚠️ 后台 SDK 根据所有数据生成 <code>sign</code>，建议通过 API 拿到这个数据，拼接数据会报错。  </li>
-					<li>⚠️ <code>out_trade_no</code> 订单 id 和 <code>sign</code> 签名 是唯一的，每次不一样，需要后台生成。  </li>
-				</ul>
-				<p>支付返回结果，支付宝<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L50-L74">返回结果参数说明</a>：</p>
-				<pre><code class="language-json">{
+						<p>订单详情 <a href="https://opendocs.alipay.com/open/204/105295#%E5%BF%AB%E6%8D%B7%E8%AE%A2%E5%8D%95%E6%94%AF%E4%BB%98%20iOS"><code>payInfo</code></a> 编码前的数据</p>
+						<pre><code class="language-bash">alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;app_id=xxxxxxxxxxxxx&amp;biz_content={ <span class="hljs-string">&quot;out_trade_no&quot;</span>:<span class="hljs-string">&quot;123123123123123&quot;</span>, <span class="hljs-string">&quot;total_amount&quot;</span>:<span class="hljs-string">&quot;0.01&quot;</span>, <span class="hljs-string">&quot;subject&quot;</span>:<span class="hljs-string">&quot;1234&quot;</span>, <span class="hljs-string">&quot;product_code&quot;</span>:<span class="hljs-string">&quot;QUICK_MSECURITY_PAY&quot;</span> }&amp;charset=UTF-8&amp;format=json&amp;method=alipay.trade.app.pay&amp;notify_url=http://ane.boshu.ltd/owner/pay/api/ownerPay/callback&amp;return_url=uiwjspay://&amp;sign=re/+2SICQggOUjfxl7MtP/qzir2e+LdH4m+02gDcw0fkByO5MqXW/9bmXw+c4RMqo835OAjMZs7s966ZuDx2PB+hO0tJ/bzdHLLqYlBeCcETkrfwRx+AFZNgzsCn75eRCA7GONH35BpfSeGkQUZ+vNXftqd6hWaa7m/MhQYrjQcV98IVJM+UR67Gj68c+LM586cnk0+rbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd/beH0F8eqTVv8gW1ZTo5v/d/E2wSDGV1DciaEnCroTw==&amp;sign_type=RSA2&amp;timestamp=2020-07-09 09:50:41&amp;version=1.0</code></pre>
+						<p>订单详情 <code>payInfo</code> 编码的数据</p>
+						<pre><code class="language-bash">alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;app_id=xxxxxxxxxxxxx&amp;biz_content=%7B+%22out_trade_no%22%3A%22123123123123123%22%2C+%22total_amount%22%3A%220.01%22%2C+%22subject%22%3A%221234%22%2C+%22product_code%22%3A%22QUICK_MSECURITY_PAY%22+%7D&amp;charset=UTF-8&amp;format=json&amp;method=alipay.trade.app.pay&amp;notify_url=http%3A%2F%2Fane.boshu.ltd%2Fowner%2Fpay%2Fapi%2FownerPay%2Fcallback&amp;return_url=uiwjspay%3A%2F%2F&amp;sign=re%2F%2B2SICQggOUjfxl7MtP%2Fqzir2e%2BLdH4m%2B02gDcw0fkByO5MqXW%2F9bmXw%2Bc4RMqo835OAjMZs7s966ZuDx2PB%2BhO0tJ%2FbzdHLLqYlBeCcETkrfwRx%2BAFZNgzsCn75eRCA7GONH35BpfSeGkQUZ%2BvNXftqd6hWaa7m%2FMhQYrjQcV98IVJM%2BUR67Gj68c%2BLM586cnk0%2Brbj8zoos6tCvN8c3xx5UaCobzw4Ogf0PWZ7PZROTU9w2gtoxFfOC5d5slN3laaAXVjAxSf9JCNs8q95fDbzpbmstQOuPgGHkASkd%2FbeH0F8eqTVv8gW1ZTo5v%2Fd%2FE2wSDGV1DciaEnCroTw%3D%3D&amp;sign_type=RSA2&amp;timestamp=2020-07-09+09%3A50%3A41&amp;version=1.0</code></pre>
+						<ul>
+							<li>⚠️ 后台 SDK 根据所有数据生成 <code>sign</code>，建议通过 API 拿到这个数据，拼接数据会报错。  </li>
+							<li>⚠️ <code>out_trade_no</code> 订单 id 和 <code>sign</code> 签名 是唯一的，每次不一样，需要后台生成。  </li>
+						</ul>
+						<p>支付返回结果，支付宝<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L50-L74">返回结果参数说明</a>：</p>
+						<pre><code class="language-json">{
   <span class="hljs-attr">&quot;result&quot;</span>: <span class="hljs-string">&quot;{\&quot;alipay_trade_app_pay_response\&quot;:{\&quot;code\&quot;:\&quot;10000\&quot;,\&quot;msg\&quot;:\&quot;Success\&quot;,\&quot;app_id\&quot;:\&quot;2021001172656340\&quot;,\&quot;auth_app_id\&quot;:\&quot;2021001172656340\&quot;,\&quot;charset\&quot;:\&quot;UTF-8\&quot;,\&quot;timestamp\&quot;:\&quot;2020-07-08 21:30:14\&quot;,\&quot;out_trade_no\&quot;:\&quot;123123213123214\&quot;,\&quot;total_amount\&quot;:\&quot;0.01\&quot;,\&quot;trade_no\&quot;:\&quot;2020070822001414841426413774\&quot;,\&quot;seller_id\&quot;:\&quot;2088421915791034\&quot;},\&quot;sign\&quot;:\&quot;LY7wCsNLp+QnDqCq6VelY/RvyK7ZGY8wsXoKvS+Or7JjONLDUx5P6lDgqRKkpkng7br3y6GZzfGKaZ88Tf4eMnBMKyqU+huR2Um47xUxP383njvHlxuQZsSTLQZRswy4wmb/fPkFfvyH6Or6+oj0eboePOTu63bNr+h03w0QnP4znuHpfRuoVgWpsYh/6B1DL+4xfWRKJ21zm1SV9Feo9RWqnyTaGZyFVi6IKge0dUCYs9hXju95fOUVUOx5YflOFtSEnZafY9Ls4FCRQE1ANkjaKiKIE0+c4c4sEVEf/9Dwh88N+aSQOoLT+AV4RpjMoA8hF2k+vv2OKNeqr6SYGQ==\&quot;,\&quot;sign_type\&quot;:\&quot;RSA2\&quot;}&quot;</span>,
   <span class="hljs-attr">&quot;resultStatus&quot;</span>: <span class="hljs-string">&quot;9000&quot;</span>,
   <span class="hljs-attr">&quot;memo&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
 }</code></pre>
-				<a href="#alipayauthinfo-登录授权" id="alipayauthinfo-登录授权" style="color: inherit; text-decoration: none;">
-					<h3><code>Alipay.authInfo</code> 登录授权</h3>
-				</a>
-				<blockquote>
-					<p><code>Alipay.authInfo: (authInfoStr: string) =&gt; Promise&lt;AuthResult&gt;</code>;</p>
-				</blockquote>
-				<ul>
-					<li>⚠️ 注意授权成功返回结果是一个字符串，<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L89-L113">返回内容</a>  </li>
-					<li>⚠️ 支付宝需要设置 <code>Scheme</code> 和 iOS添加原生代码，才能支持验证<a href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%94%E5%9B%9E%E5%BA%94%E7%94%A8-ios-%E8%AE%BE%E7%BD%AE">回弹商家APP</a>的功能</li>
-					<li>⚠️ 支付宝 <code>管理中心-支付宝开放平台</code> 需要签约 <a href="https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD"><code>APP支付宝登录</code></a></li>
-				</ul>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
+						<a href="#alipayauthinfo-登录授权" id="alipayauthinfo-登录授权" style="color: inherit; text-decoration: none;">
+							<h3><code>Alipay.authInfo</code> 登录授权</h3>
+						</a>
+						<blockquote>
+							<p><code>Alipay.authInfo: (authInfoStr: string) =&gt; Promise&lt;AuthResult&gt;</code>;</p>
+						</blockquote>
+						<ul>
+							<li>⚠️ 注意授权成功返回结果是一个字符串，<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L89-L113">返回内容</a>  </li>
+							<li>⚠️ 支付宝需要设置 <code>Scheme</code> 和 iOS添加原生代码，才能支持验证<a href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%94%E5%9B%9E%E5%BA%94%E7%94%A8-ios-%E8%AE%BE%E7%BD%AE">回弹商家APP</a>的功能</li>
+							<li>⚠️ 支付宝 <code>管理中心-支付宝开放平台</code> 需要签约 <a href="https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD"><code>APP支付宝登录</code></a></li>
+						</ul>
+						<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
 
 <span class="hljs-comment">// 设置 支付宝 URL Schemes，要表述他是宇宙唯一性，可以使用 `bundle Identifier`</span>
 <span class="hljs-comment">// scheme = `alipay` + `APPID`，`APPID` 为支付宝分配给开发者的应用ID</span>
@@ -156,44 +157,44 @@ Alipay.setAlipayScheme(scheme);
   <span class="hljs-comment">// resule =&gt; success=true&amp;auth_code=9c11732de44f4f1790b63978b6fbOX53&amp;result_code=200&amp;alipay_open_id=20881001757376426161095132517425&amp;user_id=2088003646494707</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;authInfo:resule--&gt;&gt;&gt;&#x27;</span>, resule);
 }</code></pre>
-				<p>授权返回结果，支付宝<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L89-L113">返回结果参数说明</a>：</p>
-				<pre><code class="language-json">{
+						<p>授权返回结果，支付宝<a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L89-L113">返回结果参数说明</a>：</p>
+						<pre><code class="language-json">{
   <span class="hljs-attr">&quot;resultStatus&quot;</span>: <span class="hljs-string">&quot;9000&quot;</span>,
   <span class="hljs-attr">&quot;memo&quot;</span>: <span class="hljs-string">&quot;处理成功&quot;</span>,
   <span class="hljs-attr">&quot;result&quot;</span>: <span class="hljs-string">&quot;success=true&amp;result_code=200&amp;app_id=202100117265&amp;auth_code=8b6e5581b85WX84&amp;scope=kuaijie&amp;alipay_open_id=20881029919664670&amp;user_id=20880025&amp;target_id=15946456110003465&quot;</span>
 }</code></pre>
-				<a href="#alipaygetversion-获取-sdk-版本" id="alipaygetversion-获取-sdk-版本" style="color: inherit; text-decoration: none;">
-					<h3><code>Alipay.getVersion</code> 获取 SDK 版本</h3>
-				</a>
-				<blockquote>
-					<p><code>Alipay.getVersion: () =&gt; Promise&lt;string&gt;;</code></p>
-				</blockquote>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
+						<a href="#alipaygetversion-获取-sdk-版本" id="alipaygetversion-获取-sdk-版本" style="color: inherit; text-decoration: none;">
+							<h3><code>Alipay.getVersion</code> 获取 SDK 版本</h3>
+						</a>
+						<blockquote>
+							<p><code>Alipay.getVersion: () =&gt; Promise&lt;string&gt;;</code></p>
+						</blockquote>
+						<pre><code class="language-js"><span class="hljs-keyword">import</span> Alipay <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uiw/react-native-alipay&#x27;</span>;
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getVersion</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> version = <span class="hljs-keyword">await</span> Alipay.getVersion();
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;version:&#x27;</span>, version);
 }</code></pre>
-				<a href="#支付宝返回应用-ios-设置" id="支付宝返回应用-ios-设置" style="color: inherit; text-decoration: none;">
-					<h2>支付宝返回应用 iOS 设置</h2>
-				</a>
-				<ul>
-					<li>⚠️ Android 端不需要做任何设置。</li>
-					<li>⚠️ 如果用户从 <code>支付宝App</code> 跳转到 <code>商家APP</code>，是通过系统功能切换，而不是通过 <code>支付宝APP</code> 功能键返回 <code>商家APP</code>，回调函数是不起作用的，可通过 <a href="https://github.com/uiwjs/react-native-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L8-L24"><code>AppState.addEventListener</code></a> 监听事件请求后台 API，来优化这一用户体验。</li>
-				</ul>
-				<ol>
-					<li>在代码中设置支付宝 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L7"><code>URL Schemes</code></a>，下面实例 <a href="https://github.com/uiwjs/react-native-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08"><code>uiwjspay</code></a> 是定义的 <code>scheme</code>，你也可以定义为 <code>alipay</code> + <code>appid</code>，<code>appid</code> 为支付宝分配给开发者的应用ID，用来表述 <code>scheme</code> 唯一性。</li>
-				</ol>
-				<pre><code class="language-js">Alipay.setAlipayScheme(<span class="hljs-string">&#x27;uiwjspay&#x27;</span>);</code></pre>
-				<ol start="2">
-					<li>在请求支付的 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L11"><code>payInfo</code></a> 中必须包含 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L11"><code>return_url=uiwjspay://</code></a>，<code>return_url</code> 的值为定义的 <code>scheme</code> =&gt; <code>uiwjspay://</code>，才会返回<a href="https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89">支付宝订单支付状态结果</a></li>
-				</ol>
-				<pre><code class="language-js"><span class="hljs-comment">// payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=uiwjspay://`</span>
+						<a href="#支付宝返回应用-ios-设置" id="支付宝返回应用-ios-设置" style="color: inherit; text-decoration: none;">
+							<h2>支付宝返回应用 iOS 设置</h2>
+						</a>
+						<ul>
+							<li>⚠️ Android 端不需要做任何设置。</li>
+							<li>⚠️ 如果用户从 <code>支付宝App</code> 跳转到 <code>商家APP</code>，是通过系统功能切换，而不是通过 <code>支付宝APP</code> 功能键返回 <code>商家APP</code>，回调函数是不起作用的，可通过 <a href="https://github.com/uiwjs/react-native-alipay/blob/5daea87bf0af05d60d0ae9e4c04e1e2d1a6e4273/example/App.js#L8-L24"><code>AppState.addEventListener</code></a> 监听事件请求后台 API，来优化这一用户体验。</li>
+						</ul>
+						<ol>
+							<li>在代码中设置支付宝 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L7"><code>URL Schemes</code></a>，下面实例 <a href="https://github.com/uiwjs/react-native-alipay/commit/f6d21b6b7ec7236b195c56281f971092f3c9bb08"><code>uiwjspay</code></a> 是定义的 <code>scheme</code>，你也可以定义为 <code>alipay</code> + <code>appid</code>，<code>appid</code> 为支付宝分配给开发者的应用ID，用来表述 <code>scheme</code> 唯一性。</li>
+						</ol>
+						<pre><code class="language-js">Alipay.setAlipayScheme(<span class="hljs-string">&#x27;uiwjspay&#x27;</span>);</code></pre>
+						<ol start="2">
+							<li>在请求支付的 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L11"><code>payInfo</code></a> 中必须包含 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/App.js#L11"><code>return_url=uiwjspay://</code></a>，<code>return_url</code> 的值为定义的 <code>scheme</code> =&gt; <code>uiwjspay://</code>，才会返回<a href="https://opendocs.alipay.com/open/204/105301#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B%EF%BC%88iOS%7CAndroid%EF%BC%89">支付宝订单支付状态结果</a></li>
+						</ol>
+						<pre><code class="language-js"><span class="hljs-comment">// payInfo 是后台拼接好的支付参数，这个参数必须包含 `return_url=uiwjspay://`</span>
 Alipay.alipay(payInfo, <span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span><span class="hljs-built_in">console</span>.log(res))</code></pre>
-				<ol start="3">
-					<li>用的 <code>URL Schemes</code> 列为白名单，在 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/ios/example/Info.plist#L23-L41"><code>ios/&lt;应用名称&gt;/Info.plist</code></a> 中添加</li>
-				</ol>
-				<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">key</span>&gt;</span>LSApplicationQueriesSchemes<span class="hljs-tag">&lt;/<span class="hljs-name">key</span>&gt;</span>
+						<ol start="3">
+							<li>用的 <code>URL Schemes</code> 列为白名单，在 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/ios/example/Info.plist#L23-L41"><code>ios/&lt;应用名称&gt;/Info.plist</code></a> 中添加</li>
+						</ol>
+						<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">key</span>&gt;</span>LSApplicationQueriesSchemes<span class="hljs-tag">&lt;/<span class="hljs-name">key</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">array</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">string</span>&gt;</span>alipay<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">array</span>&gt;</span>
@@ -210,10 +211,10 @@ Alipay.alipay(payInfo, <span class="hljs-function">(<span class="hljs-params">re
     <span class="hljs-tag">&lt;/<span class="hljs-name">array</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">dict</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">array</span>&gt;</span></code></pre>
-				<ol start="4">
-					<li>修改 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/ios/example/AppDelegate.m#L60-L70"><code>ios/&lt;应用名称&gt;/AppDelegate.m</code></a> 添加下列代码：</li>
-				</ol>
-				<pre><code class="language-objective-c">#import &lt;React/RCTLinkingManager.h&gt;
+						<ol start="4">
+							<li>修改 <a href="https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/example/ios/example/AppDelegate.m#L60-L70"><code>ios/&lt;应用名称&gt;/AppDelegate.m</code></a> 添加下列代码：</li>
+						</ol>
+						<pre><code class="language-objective-c">#import &lt;React/RCTLinkingManager.h&gt;
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
@@ -225,40 +226,40 @@ Alipay.alipay(payInfo, <span class="hljs-function">(<span class="hljs-params">re
 {
   return [RCTLinkingManager application:application openURL:url options:options];
 }</code></pre>
-				<p><strong>命令测试</strong></p>
-				<ul>
-					<li>iOS: <code>xcrun simctl openurl booted uiwjspay://</code></li>
-					<li>Android：<code>adb shell am start -W -a android.intent.action.VIEW -d &quot;uiwjspay://test/router&quot; com.uiwjspay</code></li>
-				</ul>
-				<a href="#错误处理" id="错误处理" style="color: inherit; text-decoration: none;">
-					<h2>错误处理</h2>
-				</a>
-				<pre><code class="language-bash">[NetworkInfo] Signal strength query returned error: Error Domain=NSPOSIXErrorDomain Code=13 <span class="hljs-string">&quot;Permission denied&quot;</span>, descriptor: &lt;CTServiceDescriptor 0x283317100, domain=1, instance=1&gt;</code></pre>
-				<p>在 <code>Product</code> -&gt; <code>Scheme</code> -&gt; <code>Edit Scheme</code> -&gt; <code>Run</code> -&gt; <code>Arguments</code> -&gt; <code>Environment Variables</code> 添加 <code>OS_ACTIVITY_MODE</code> <code>disable</code></p>
-				<a href="#其它" id="其它" style="color: inherit; text-decoration: none;">
-					<h2>其它</h2>
-				</a>
-				<p>当前工程基于 <a href="https://github.com/brodybits/create-react-native-module">@brodybits/create-react-native-module</a> 初始化。</p>
-				<pre><code class="language-bash">npx create-react-native-module --package-identifier com.uiwjs --object-class-name RNAlipay --generate-example Alipay --example-react-native-version 0.63.0 --module-name @uiw/react-native-alipay --github-account uiwjs --author-name <span class="hljs-string">&quot;Kenny Wong&quot;</span> --author-email <span class="hljs-string">&quot;wowohoo@qq.com&quot;</span></code></pre>
-				<a href="#开发" id="开发" style="color: inherit; text-decoration: none;">
-					<h2>开发</h2>
-				</a>
-				<pre><code class="language-bash"><span class="hljs-built_in">cd</span> example   <span class="hljs-comment"># 进入实例 example 工程，根目录不需要安装，会引发错误</span>
+						<p><strong>命令测试</strong></p>
+						<ul>
+							<li>iOS: <code>xcrun simctl openurl booted uiwjspay://</code></li>
+							<li>Android：<code>adb shell am start -W -a android.intent.action.VIEW -d &quot;uiwjspay://test/router&quot; com.uiwjspay</code></li>
+						</ul>
+						<a href="#错误处理" id="错误处理" style="color: inherit; text-decoration: none;">
+							<h2>错误处理</h2>
+						</a>
+						<pre><code class="language-bash">[NetworkInfo] Signal strength query returned error: Error Domain=NSPOSIXErrorDomain Code=13 <span class="hljs-string">&quot;Permission denied&quot;</span>, descriptor: &lt;CTServiceDescriptor 0x283317100, domain=1, instance=1&gt;</code></pre>
+						<p>在 <code>Product</code> -&gt; <code>Scheme</code> -&gt; <code>Edit Scheme</code> -&gt; <code>Run</code> -&gt; <code>Arguments</code> -&gt; <code>Environment Variables</code> 添加 <code>OS_ACTIVITY_MODE</code> <code>disable</code></p>
+						<a href="#其它" id="其它" style="color: inherit; text-decoration: none;">
+							<h2>其它</h2>
+						</a>
+						<p>当前工程基于 <a href="https://github.com/brodybits/create-react-native-module">@brodybits/create-react-native-module</a> 初始化。</p>
+						<pre><code class="language-bash">npx create-react-native-module --package-identifier com.uiwjs --object-class-name RNAlipay --generate-example Alipay --example-react-native-version 0.63.0 --module-name @uiw/react-native-alipay --github-account uiwjs --author-name <span class="hljs-string">&quot;Kenny Wong&quot;</span> --author-email <span class="hljs-string">&quot;wowohoo@qq.com&quot;</span></code></pre>
+						<a href="#开发" id="开发" style="color: inherit; text-decoration: none;">
+							<h2>开发</h2>
+						</a>
+						<pre><code class="language-bash"><span class="hljs-built_in">cd</span> example   <span class="hljs-comment"># 进入实例 example 工程，根目录不需要安装，会引发错误</span>
 yarn install <span class="hljs-comment"># 安装依赖</span>
 
 <span class="hljs-built_in">cd</span> ios     <span class="hljs-comment"># 进入 example/ios 目录安装依赖</span>
 pod instll <span class="hljs-comment"># 安装依赖</span></code></pre>
-				<a href="#相关连接" id="相关连接" style="color: inherit; text-decoration: none;">
-					<h2>相关连接</h2>
-				</a>
-				<ul>
-					<li><a href="https://opendocs.alipay.com/open/291/105971">支付宝：生成秘钥指南</a></li>
-					<li><a href="https://opendocs.alipay.com/open/54/104509">支付宝：SDK 下载地址，当前使用的是 AlipaySDK    15.7.9</a></li>
-					<li><a href="https://openclub.alipay.com/club/history/read/7695">支付宝：客户端调试工具及使用教程</a></li>
-					<li><a href="https://opendocs.alipay.com/open/204/105297/">支付宝：支付，接入前准备</a></li>
-					<li><a href="https://opendocs.alipay.com/open/218/105325">支付宝：完整版授权 SDK 调用方法</a></li>
-					<li><a href="https://opensupport.alipay.com/support/problem.htm?ant_source=antsupport">支付宝：异步通知错误码: IllRet</a></li>
-				</ul>
+						<a href="#相关连接" id="相关连接" style="color: inherit; text-decoration: none;">
+							<h2>相关连接</h2>
+						</a>
+						<ul>
+							<li><a href="https://opendocs.alipay.com/open/291/105971">支付宝：生成秘钥指南</a></li>
+							<li><a href="https://opendocs.alipay.com/open/54/104509">支付宝：SDK 下载地址，当前使用的是 AlipaySDK    15.7.9</a></li>
+							<li><a href="https://openclub.alipay.com/club/history/read/7695">支付宝：客户端调试工具及使用教程</a></li>
+							<li><a href="https://opendocs.alipay.com/open/204/105297/">支付宝：支付，接入前准备</a></li>
+							<li><a href="https://opendocs.alipay.com/open/218/105325">支付宝：完整版授权 SDK 调用方法</a></li>
+							<li><a href="https://opensupport.alipay.com/support/problem.htm?ant_source=antsupport">支付宝：异步通知错误码: IllRet</a></li>
+						</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
