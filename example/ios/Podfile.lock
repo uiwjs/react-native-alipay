@@ -296,7 +296,7 @@ PODS:
     - React-Core (= 0.63.0)
     - React-cxxreact (= 0.63.0)
     - React-jsi (= 0.63.0)
-  - RNAlipay (2.1.3):
+  - RNAlipay (3.0.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -460,7 +460,7 @@ SPEC CHECKSUMS:
   React-RCTText: ba503bf4cce41881ca258ba789c33e017955efdd
   React-RCTVibration: 77ab1cf4a5eb854b88ad5ed3e9d8509ed124525e
   ReactCommon: f63556ee9e41e9802257228237e5e660451a03cf
-  RNAlipay: ec925c1fa0921bc7059c14c47c846564e3808346
+  RNAlipay: e9567310da367fda84803b006d623355f91e2ecb
   Yoga: 7d2edc5b410474191962e6dee88ee67f9b328b6b
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
