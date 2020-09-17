@@ -22,8 +22,21 @@ Pod::Spec.new do |s|
   # s.source_files = "**/*.{h,m}"
   s.requires_arc = true
 
+  s.frameworks = "UIKit",
+  s.frameworks = "Foundation",
+  s.frameworks = "CFNetwork",
+  s.frameworks = "SystemConfiguration",
+  s.frameworks = "QuartzCore",
+  s.frameworks = "CoreGraphics",
+  s.frameworks = "CoreMotion",
+  s.frameworks = "CoreTelephony",
+  s.frameworks = "CoreText",
+  s.frameworks = "WebKit"
+
   s.dependency "React"
-  s.dependency "AlipaySDK-iOS"
+  s.resource = 'AlipaySDK.bundle'
+  # s.source_files  = "AlipaySDKiOS/AlipaySDK.framework/**/*"
+  s.vendored_frameworks = 'AlipaySDK.framework'
   s.library = "c++", "z"
   # ...
   # s.dependency "..."

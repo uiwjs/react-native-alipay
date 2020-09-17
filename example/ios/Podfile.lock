@@ -1,5 +1,4 @@
 PODS:
-  - AlipaySDK-iOS (15.7.4)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
@@ -297,8 +296,7 @@ PODS:
     - React-Core (= 0.63.0)
     - React-cxxreact (= 0.63.0)
     - React-jsi (= 0.63.0)
-  - RNAlipay (2.0.6):
-    - AlipaySDK-iOS
+  - RNAlipay (2.1.3):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -356,7 +354,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AlipaySDK-iOS
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
@@ -427,7 +424,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -464,7 +460,7 @@ SPEC CHECKSUMS:
   React-RCTText: ba503bf4cce41881ca258ba789c33e017955efdd
   React-RCTVibration: 77ab1cf4a5eb854b88ad5ed3e9d8509ed124525e
   ReactCommon: f63556ee9e41e9802257228237e5e660451a03cf
-  RNAlipay: 1f29cbcb012b4191010dcccee7d597487780a354
+  RNAlipay: ec925c1fa0921bc7059c14c47c846564e3808346
   Yoga: 7d2edc5b410474191962e6dee88ee67f9b328b6b
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
