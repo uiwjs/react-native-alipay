@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+  },
+  "typedocOptions": {
+    "entryPoints": ["./index.d.ts"],
+    "out": "typedoc",
+    "name": "React Native Alipay",
+    "theme": "minimal",
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "toc": ["EntryClass", "ImportantInterface"],
+    "hideGenerator": true
+  }
+}

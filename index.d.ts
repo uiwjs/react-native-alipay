@@ -129,12 +129,15 @@ export interface AuthResult {
 }
 /**
  * 支付
- * @param payInfo 支付详情
+ * @param payInfo 支付详情，是后台拼接好的支付参数
  * @returns result 支付宝回调结果 https://docs.open.alipay.com/204/105301
  */
 export function alipay(payInfo: string): Promise<OrderResult>;
 /**
  * 快速登录授权
+ * - ⚠️ 注意授权成功返回结果是一个字符串，[返回内容](https://github.com/uiwjs/react-native-alipay/blob/74140a294e850884ed1851b9d2c2d2c00ee75003/index.d.ts#L89-L113)
+ * - ⚠️ 支付宝需要设置 Scheme 和 iOS添加原生代码，才能支持验证[回弹商家APP]的功能
+ * - ⚠️ 支付宝 `管理中心-支付宝开放平台` 需要签约 `APP支付宝登录`
  * @param authInfoStr 验证详情
  * @returns result 支付宝回调结果 https://opendocs.alipay.com/open/218/105327
  */
