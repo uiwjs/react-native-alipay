@@ -18,9 +18,45 @@ jobs:
     - run: npm install
     - run: npm run build
 
+    - name: Create Tag
+      id: create_tag
+      uses: jaywcjlove/create-tag-action@v1.3.5
+      with:
+        package-path: ./package.json
+
+    - name: Generate Changelog
+      id: changelog
+      uses: jaywcjlove/changelog-generator@v1.4.8
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        head-ref: ${{steps.create_tag.outputs.version}}
+        filter-author: (renovate-bot|Renovate Bot)
+        filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+
     - name: Build and Deploy
-      uses: peaceiris/actions-gh-pages@v2.5.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./typedoc
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./typedoc
+
+    - name: Create Release
+      uses: jaywcjlove/create-tag-action@v1.3.5
+      with:
+        package-path: ./package.json
+        release: true
+        body: |
+          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-native-alipay@${{steps.changelog.outputs.version}}/file/README.md)
+
+          ${{ steps.changelog.outputs.compareurl }}
+          
+          ${{ steps.changelog.outputs.changelog }}
+
+          ```bash
+          npm i @uiw/react-native-alipay@${{steps.changelog.outputs.version}}
+          ```
+
+    - name: 📦 @uiw/react-native-alipay publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./package.json
