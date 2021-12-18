@@ -15,7 +15,7 @@
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png)
 
-> ⚠️ `4.0+` 在 iOS 打包中报错，这是因为[使用阿里云产品的 SDK 出现 UTDID 冲突的问题](https://help.aliyun.com/document_detail/39984.html)，在 [@EatherToo](https://github.com/EatherToo) 的帮助下(#44)，UTDID 被剥离了。可以在 `Podfile` 中加上 `pod 'UTDID'` 解决打包失败的问题。感谢 [@abing](https://github.com/ouabing)
+> ⚠️ `4.0+` 在 iOS 打包中报错，这是因为[使用阿里云产品的 SDK 出现 UTDID 冲突的问题](https://help.aliyun.com/document_detail/39984.html)，在 [@EatherToo](https://github.com/EatherToo) 的帮助下([#44](https://github.com/uiwjs/react-native-alipay/pull/44))，UTDID 被剥离了。可以在 `Podfile` 中加上 `pod 'UTDID'` 解决打包失败的问题。感谢 [@abing](https://github.com/ouabing)
 
 ## 注意事项
 
