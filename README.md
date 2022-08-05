@@ -17,6 +17,8 @@
 
 > ⚠️ `4.0+` 在 iOS 打包中报错，这是因为[使用阿里云产品的 SDK 出现 UTDID 冲突的问题](https://help.aliyun.com/document_detail/39984.html)，在 [@EatherToo](https://github.com/EatherToo) 的帮助下([#44](https://github.com/uiwjs/react-native-alipay/pull/44))，UTDID 被剥离了。可以在 `Podfile` 中加上 `pod 'UTDID'` 解决打包失败的问题。感谢 [@abing](https://github.com/ouabing)
 
+> ⚠️ `v5.x` 在 android 需要 `Gradle 7+` ([#61](https://github.com/uiwjs/react-native-alipay/issues/61#issuecomment-1206243613) [#60](https://github.com/uiwjs/react-native-alipay/pull/60))
+
 ## 注意事项
 
 1. Android：支持2.3及以上的系统版本运行。
