@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9EB6BD424BDF5E6001A2514 /* AlipaySDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B9EB6BCF24BDF342001A2514 /* AlipaySDK */; };
+		7DE1E4C2289E2AB500722D10 /* AlipaySDK in Frameworks */ = {isa = PBXBuildFile; fileRef = B9EB6BCF24BDF342001A2514 /* AlipaySDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9EB6BD424BDF5E6001A2514 /* AlipaySDK in Frameworks */,
+				7DE1E4C2289E2AB500722D10 /* AlipaySDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

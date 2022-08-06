@@ -4,14 +4,12 @@
 
 @interface RNAlipay ()
 @property (nonatomic, copy) RCTPromiseResolveBlock payOrderResolve;
+
 @end
-
-
 @implementation RNAlipay
 {
     NSString *alipayScheme;
 }
-
 RCT_EXPORT_MODULE()
 
 - (instancetype)init
@@ -108,10 +106,19 @@ RCT_EXPORT_METHOD(getVersion: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromi
 /*! 
  * [warn][tid:main][RCTModuleData.mm:68] Module Alipay requires main queue setup since it overrides `init` but doesn't implement `requiresMainQueueSetup`. 
  * In a future release React Native will default to initializing all native modules on a background thread unless explicitly opted-out of.
- */
+ */;
 + (BOOL)requiresMainQueueSetup
 {
     return YES;
 }
+
+// Don't compile this code when we build for the old architecture.
+#ifdef RCT_NEW_ARCH_ENABLED
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+    (const facebook::react::ObjCTurboModule::InitParams &)params
+{
+    return std::make_shared<facebook::react::NativeAwesomeModuleSpecJSI>(params);
+}
+#endif
 
 @end

@@ -1,5 +1,24 @@
 import { NativeModules, Platform } from 'react-native';
 
+const LINKING_ERROR =
+  `The package '@uiw/react-native-alipay' doesn't seem to be linked. Make sure: \n\n` +
+  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
+  '- You rebuilt the app after installing the package\n' +
+  '- You are not using Expo managed workflow\n';
+
+console.log(':::NativeModules:::', NativeModules.RNAlipay)
+const RNAlipay = NativeModules.RNAlipay ? NativeModules.RNAlipay  : new Proxy(
+  {},
+  {
+    get() {
+      throw new Error(LINKING_ERROR);
+    },
+  }
+);
+// console.log('>RNAlipay1111>',  RNAlipay.setAlipayScheme)
+
+// console.log('>>NativeModules.RNAlipay:', NativeModules.RNAlipay)
+
 export default class Alipay {
   /**
    * 支付
