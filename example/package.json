@@ -16,7 +16,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "@uiw/react-native-alipay": "5.0.1",
+    "@uiw/react-native-alipay": "5.0.2",
     "react": "18.0.0",
     "react-native": "0.69.3"
   },
